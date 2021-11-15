@@ -1,0 +1,72 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiIiIAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAACIiIiIiIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "enemy spawn spot"
+    },
+    "image3": {
+        "data": "hwQLAC4AAAAAAAAAAABmZmZmZtbdAAAAAAAAAAAA5AAAAAAAAABmZmZmZtbdAAAAAAAAAAAA5AAAAADuDQBmZmZmZmZmj4iIiIiIiIhI5AAAAODu3Q1mZmZmZmZmj4iIiIiIiIhI5AAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3Q1mZmZmZmZmj4iIiIiIiIhI5AAAAADgDQBmZmZmZmZmj4iIiIiIiIhI5ADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5ADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5AA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Hero - right"
+    },
+    "image2": {
+        "data": "hwQLAC4AAADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5ADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5AAAAADuDQBmZmZmZmZmj4iIiIiIiIhI5AAAAODu3Q1mZmZmZmZmj4iIiIiIiIhI5AAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3Q1mZmZmZmZmj4iIiIiIiIhI5AAAAADgDQBmZmZmZmZmj4iIiIiIiIhI5ADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5ADdbWZmZmZmBgAAAADQAAAAAAAAAAAA5AA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Hero - direct"
+    },
+    "image4": {
+        "data": "hwQLAC4AAADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5ADdbWZmZmZmBgAAAAAAAAAAAAAAAAAA5AAAAADuDQBmZmZmZmZmj4iIiIiIiIhI5AAAAODu3Q1mZmZmZmZmj4iIiIiIiIhI5AAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3t1mZmZmZmZmj4gAAAAAAAAAAAAAAODu3Q1mZmZmZmZmj4iIiIiIiIhI5AAAAADgDQBmZmZmZmZmj4iIiIiIiIhI5AAAAAAAAABmZmZmZtbdAAAAAAAAAAAA5AAAAAAAAABmZmZmZtbdAAAAAAAAAAAA5AA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Hero - left"
+    },
+    "image6": {
+        "data": "hwQMAAoAAACwIkRUBQAAALsiIlRVAAAAuxEREVUAAAAbRCJSUQAAABtEEVRRAAAAGxoiQVEAAAAYGjpBIQAAABiqESQhAAAAGKqqJCEAAACIERERIgAAAIiIOEMiAAAAgIiIQwQAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Instagram"
+    },
+    "image5": {
+        "data": "hwQMAAsAAAAgIiIiIgAAACIiIiIiAgAAIhIRESICAAAiERERIQIAACIREREhAgAAIiEiIiECAAAiESISIQIAACIRIREhAgAAIhERESECAAAiEhERIgIAACIiIiIiAgAAICIiIiIAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "YouTube"
+    },
+    "image7": {
+        "data": "hwQMAAsAAACAiIiIiAAAAIiIiIiICAAAiIiIiIgIAACIiBiBiAgAAIgRERERCAAAGBEREREIAAAYgRiBiAgAABiBiIiICAAAiIiIiIgIAACIiIiIiAgAAIiIiIiICAAAgIiIiIgAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Facebook"
+    },
+    "image8": {
+        "data": "hwQMAAoAAABgZmZmBgAAAGZmZmZmAAAAZmZmZmYAAAAWERERZgAAABYRERFhAAAAZhZhFmEAAABmFmEWYQAAAGYWYRZhAAAAZhZhFmEAAABmZmZmZgAAAGZmZmZmAAAAYGZmZgYAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Twitter"
+    },
+    "image10": {
+        "data": "hwQMAAoAAADw////DwAAAP//////AAAA/xEREf8AAAD/8R///wAAAP/xH///AAAA/x/x//8AAABPRERE9AAAAE/////0AAAAT0T0RPQAAABPRPT/9AAAAE9ERET0AAAA8P///w8AAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "PornHub"
+    },
+    "image11": {
+        "data": "hwQMAAsAAAAA4O7uAAAAAAA+MzMOAAAA4DPmM+MAAAA+Mw4+NQ4AAD7jAOAzDgAAPuMA4DMOAADe4wDgMw4AAD7jAOA5DgAAPjoOPjMOAADgM+Mz4wAAAAA+IzMOAAAAAODu7gAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 1"
+    },
+    "image12": {
+        "data": "hwQMAAsAAAAAMDMzAAAAAABTVVUDAAAAMFU2VTUAAABTVQNTVQMAAFM1ADBTAwAAUzUAMFUDAADTNQAwVQMAAFM1ADBZAwAAU1oDU1UDAAAwVTVVNQAAAABTJVUDAAAAADAzMwAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 0"
+    },
+    "image13": {
+        "data": "hwQMAAoAAADw////DwAAAP//////AAAA//8f//8AAAD////x/wAAAP///x//AAAA////8f8AAAD//x///wAAAP//8f//AAAA/x////8AAAD/8f///wAAAP//////AAAA8P///w8AAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Task"
+    },
+    "image9": {
+        "data": "hwQMAAsAAADw/////wAAAP//b2b/DwAA//8WEfYPAAD/b2FmYQ8AAP9v8W9hDwAA//8fLyEPAAD/ZiYiIQ8AAG8RERHyDwAA/xIiIv8PAAD/L/H//w8AAP//8v//DwAA8P////8AAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "TikTok"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
