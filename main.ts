@@ -99,7 +99,7 @@ game.onUpdate(function () {
     if (info.life() == 0) {
         gameOn = 0
     }
-    if (info.score() == 10 && speed == 0) {
+    if (info.score() == 5 && speed == 0) {
         projectileSpeed += projectileSpeedStep
         projectileUpdate += projectileUpdateStep
         speed += 1
@@ -109,7 +109,7 @@ game.onUpdate(function () {
         game.splash(projectileSpeed)
         game.splash(projectileUpdate)
         gameOn = 1
-    } else if (info.score() == 20 && speed == 1) {
+    } else if (info.score() == 10 && speed == 1) {
         projectileSpeed += projectileSpeedStep
         projectileUpdate += projectileUpdateStep
         speed += 1
@@ -119,7 +119,7 @@ game.onUpdate(function () {
         game.splash(projectileSpeed)
         game.splash(projectileUpdate)
         gameOn = 1
-    } else if (info.score() == 30 && speed == 2) {
+    } else if (info.score() == 15 && speed == 2) {
         projectileSpeed += projectileSpeedStep
         projectileUpdate += projectileUpdateStep
         speed += 1
@@ -129,7 +129,7 @@ game.onUpdate(function () {
         game.splash(projectileSpeed)
         game.splash(projectileUpdate)
         gameOn = 1
-    } else if (info.score() == 40 && speed == 3) {
+    } else if (info.score() == 20 && speed == 3) {
         projectileSpeed += projectileSpeedStep
         projectileUpdate += projectileUpdateStep
         speed += 1
@@ -139,7 +139,7 @@ game.onUpdate(function () {
         game.splash(projectileSpeed)
         game.splash(projectileUpdate)
         gameOn = 1
-    } else if (info.score() == 50 && speed == 4) {
+    } else if (info.score() == 25 && speed == 4) {
         projectileSpeed += projectileSpeedStep
         projectileUpdate += projectileUpdateStep
         speed += 1
