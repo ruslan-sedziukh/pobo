@@ -99,7 +99,7 @@ game.onUpdate(function () {
     if (info.life() == 0) {
         gameOn = 0
     }
-    if (info.score() == 3 && speed == 0) {
+    if (info.score() == 5 && speed == 0) {
         projectileSpeed += projectileSpeedStep
         projectileUpdate += projectileUpdateStep
         speed += 1
