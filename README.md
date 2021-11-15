@@ -1,7 +1,7 @@
  
 
 
-> Open this page at [https://r-sed.github.io/pb/](https://r-sed.github.io/pb/)
+> Open this page at [https://r-sed.github.io/pobo/](https://r-sed.github.io/pobo/)
 
 ## Use as Extension
 
