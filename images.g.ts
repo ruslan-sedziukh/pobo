@@ -319,6 +319,34 @@ e d d d e e e e d d d e
 . . e d d d d d d e . . 
 . . . e e e e e e . . . 
 `;
+            case "image16":
+            case "Donut 5":return img`
+. . . a a a a a a . . . 
+. . a d d d 9 d d a . . 
+. a d d d d d d d d a . 
+a d d d a a a a d d d a 
+a d 6 a . . . . a d d a 
+a d a . . . . . . a 7 a 
+a d d a . . . . a d d a 
+a d d d a a a a d d d a 
+. a d 5 d d d 3 d d a . 
+. . a d d d d d d a . . 
+. . . a a a a a a . . . 
+`;
+            case "image17":
+            case "Donut 6":return img`
+. . . a a a a a a . . . 
+. . a 3 3 3 9 3 3 a . . 
+. a 3 3 3 3 3 3 3 3 a . 
+a 3 3 3 a a a a 3 3 3 a 
+a 3 6 a . . . . a 3 3 a 
+a 3 a . . . . . . a 3 a 
+a 3 3 a . . . . a 5 3 a 
+a 3 3 3 a a a a 3 3 3 a 
+. a 3 4 3 3 3 3 3 3 a . 
+. . a 3 3 3 3 3 3 a . . 
+. . . a a a a a a . . . 
+`;
         }
         return null;
     })

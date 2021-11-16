@@ -74,6 +74,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Donut 4"
     },
+    "image16": {
+        "data": "hwQMAAsAAAAAoKqqAAAAAADa3d0KAAAAoN2m3a0AAADa3Qra1QoAANqtAKDdCgAA2q0AoN0KAACarQCg3QoAANqtAKDTCgAA2t0K2t0KAACg3a3drQAAAADafd0KAAAAAKCqqgAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 5"
+    },
+    "image17": {
+        "data": "hwQMAAsAAAAAoKqqAAAAAAA6MzMKAAAAoDOmM6MAAAA6Mwo6NAoAADqjAKAzCgAAOqMAoDMKAACaowCgMwoAADqjAKAzCgAAOjMKOjMKAACgM6M1owAAAAA6MzMKAAAAAKCqqgAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 6"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

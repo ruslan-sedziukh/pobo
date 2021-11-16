@@ -180,15 +180,19 @@ forever(function () {
         pause(donutsUpdate)
     }
     while (gameOn) {
-        n = randint(1, 4)
+        n = randint(1, 6)
         if (n == 1) {
             value = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
         } else if (n == 2) {
             value = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
         } else if (n == 3) {
             value = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
-        } else {
+        } else if (n == 4) {
             value = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
+        } else if (n == 5) {
+            value = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
+        } else {
+            value = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
         }
         value.setPosition(randint(5, 155), 0)
         value.setVelocity(0, projectileSpeed)
