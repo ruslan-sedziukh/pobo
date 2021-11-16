@@ -56,14 +56,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
+    music.pewPew.play()
     info.changeLifeBy(-1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    music.baDing.play()
     otherSprite.destroy()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
+    music.jumpUp.play()
     info.changeLifeBy(1)
 })
 let value: Sprite = null
@@ -88,6 +91,7 @@ Hops_and_Paw.y = 120
 info.setLife(5)
 let projectileSpeedStep = 25
 let projectileUpdateStep = -150
+music.setVolume(20)
 game.onUpdate(function () {
     if (Hops_and_Paw.vx < 0) {
         Hops_and_Paw.setImage(assets.image`Hero - left`)
