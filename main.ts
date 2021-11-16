@@ -180,9 +180,11 @@ forever(function () {
         pause(donutsUpdate)
     }
     while (gameOn) {
-        n = randint(1, 2)
+        n = randint(1, 3)
         if (n == 1) {
             value = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
+        } else if (n == 2) {
+            value = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
         } else {
             value = sprites.create(assets.image`Donut 0`, SpriteKind.Food)
         }

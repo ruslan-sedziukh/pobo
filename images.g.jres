@@ -64,6 +64,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "TikTok"
     },
+    "image14": {
+        "data": "hwQMAAsAAAAAMDMzAAAAAAATUREDAAAAMBE2ETEAAAATEQMTEQMAABMxADATAwAAEzEAMBEDAADTMQAwEQMAABMxADAZAwAAExoDExEDAAAwETERMQAAAAATIREDAAAAADAzMwAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 3"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
