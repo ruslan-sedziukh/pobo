@@ -250,20 +250,6 @@ e 3 3 3 e e e e 3 3 3 e
 . . e 3 3 3 3 3 3 e . . 
 . . . e e e e e e . . . 
 `;
-            case "image12":
-            case "Donut 0":return img`
-. . . 3 3 3 3 3 3 . . . 
-. . 3 5 5 5 d 5 5 3 . . 
-. 3 5 5 5 5 5 5 a 5 3 . 
-3 5 5 5 3 3 3 3 5 5 5 3 
-3 5 6 3 . . . . 3 5 5 3 
-3 5 3 . . . . . . 3 2 3 
-3 5 5 3 . . . . 3 5 5 3 
-3 5 5 5 3 3 3 3 5 5 5 3 
-. 3 5 5 3 5 5 9 5 5 3 . 
-. . 3 5 5 5 5 5 5 3 . . 
-. . . 3 3 3 3 3 3 . . . 
-`;
             case "image13":
             case "Task":return img`
 . f f f f f f f f f f . 
@@ -304,6 +290,34 @@ f f f 6 6 2 2 f f f f f
 . 3 1 1 3 1 1 9 1 1 3 . 
 . . 3 1 1 1 1 1 1 3 . . 
 . . . 3 3 3 3 3 3 . . . 
+`;
+            case "image12":
+            case "Donut 2":return img`
+. . . 3 3 3 3 3 3 . . . 
+. . 3 5 5 5 d 5 5 3 . . 
+. 3 5 5 5 5 5 5 a 5 3 . 
+3 5 5 5 3 3 3 3 5 5 5 3 
+3 5 6 3 . . . . 3 5 5 3 
+3 5 3 . . . . . . 3 2 3 
+3 5 5 3 . . . . 3 5 5 3 
+3 5 5 5 3 3 3 3 5 5 5 3 
+. 3 5 5 3 5 5 9 5 5 3 . 
+. . 3 5 5 5 5 5 5 3 . . 
+. . . 3 3 3 3 3 3 . . . 
+`;
+            case "image15":
+            case "Donut 4":return img`
+. . . e e e e e e . . . 
+. . e d d d 9 d d e . . 
+. e d d d d d d 4 d e . 
+e d d d e e e e d d d e 
+e d 6 e . . . . e d d e 
+e d e . . . . . . e 7 e 
+e d d e . . . . e d d e 
+e d d d e e e e d d d e 
+. e d 5 d d d 3 d d e . 
+. . e d d d d d d e . . 
+. . . e e e e e e . . . 
 `;
         }
         return null;

@@ -49,11 +49,6 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Donut 1"
     },
-    "image12": {
-        "data": "hwQMAAsAAAAAMDMzAAAAAABTVVUDAAAAMFU2VTUAAABTVQNTVQMAAFM1ADBTAwAAUzUAMFUDAADTNQAwVQMAAFM1ADBZAwAAU1oDU1UDAAAwVTVVNQAAAABTJVUDAAAAADAzMwAAAAA=",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Donut 0"
-    },
     "image13": {
         "data": "hwQMAAoAAADw////DwAAAP//////AAAA//8f//8AAAD////x/wAAAP///x//AAAA////8f8AAAD//x///wAAAP//8f//AAAA/x////8AAAD/8f///wAAAP//////AAAA8P///w8AAAA=",
         "mimeType": "image/x-mkcd-f4",
@@ -68,6 +63,16 @@
         "data": "hwQMAAsAAAAAMDMzAAAAAAATUREDAAAAMBE2ETEAAAATEQMTEQMAABMxADATAwAAEzEAMBEDAADTMQAwEQMAABMxADAZAwAAExoDExEDAAAwETERMQAAAAATIREDAAAAADAzMwAAAAA=",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Donut 3"
+    },
+    "image12": {
+        "data": "hwQMAAsAAAAAMDMzAAAAAABTVVUDAAAAMFU2VTUAAABTVQNTVQMAAFM1ADBTAwAAUzUAMFUDAADTNQAwVQMAAFM1ADBZAwAAU1oDU1UDAAAwVTVVNQAAAABTJVUDAAAAADAzMwAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 2"
+    },
+    "image15": {
+        "data": "hwQMAAsAAAAA4O7uAAAAAADe3d0OAAAA4N3m3e0AAADe3Q7e1Q4AAN7tAODdDgAA3u0A4N0OAACe7QDg3Q4AAN7tAODTDgAA3tQO3t0OAADg3e3d7QAAAADefd0OAAAAAODu7gAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Donut 4"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
