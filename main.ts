@@ -4,6 +4,29 @@ namespace SpriteKind {
     export const Fireball = SpriteKind.create()
     export const Task = SpriteKind.create()
 }
+function startGame () {
+    scene.setBackgroundColor(11)
+    effects.starField.startScreenEffect()
+    Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
+    controller.moveSprite(Hops_and_Paw, 200, 200)
+    Hops_and_Paw.setFlag(SpriteFlag.StayInScreen, true)
+    ammoLeft = 0
+    speed = 1
+    projectileUpdate = 1000
+    projectileSpeed = 50
+    donutsUpdate = randint(3000, 15000)
+    taskUpdate = randint(3000, 15000)
+    gameOn = 1
+    speed = 0
+    Hops_and_Paw.y = 120
+    info.setLife(5)
+    projectileSpeedStep = 25
+    projectileUpdateStep = -150
+    music.setVolume(20)
+}
+function intro () {
+	
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
     music.pewPew.play()
@@ -21,24 +44,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 let value: Sprite = null
 let n = 0
-scene.setBackgroundColor(11)
-effects.starField.startScreenEffect()
-let Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
-controller.moveSprite(Hops_and_Paw, 200, 200)
-Hops_and_Paw.setFlag(SpriteFlag.StayInScreen, true)
+let projectileUpdateStep = 0
+let projectileSpeedStep = 0
+let gameOn = 0
+let taskUpdate = 0
+let donutsUpdate = 0
+let projectileSpeed = 0
+let projectileUpdate = 0
+let speed = 0
 let ammoLeft = 0
-let speed = 1
-let projectileUpdate = 1000
-let projectileSpeed = 50
-let donutsUpdate = randint(3000, 15000)
-let taskUpdate = randint(3000, 15000)
-let gameOn = 1
-speed = 0
-Hops_and_Paw.y = 120
-info.setLife(5)
-let projectileSpeedStep = 25
-let projectileUpdateStep = -150
-music.setVolume(20)
+let Hops_and_Paw: Sprite = null
+startGame()
 game.onUpdate(function () {
     if (Hops_and_Paw.vx < 0) {
         Hops_and_Paw.setImage(assets.image`Hero - left`)
@@ -92,6 +108,10 @@ game.onUpdate(function () {
         gameOn = 1
     } else {
     	
+    }
+    if (info.life() == 0) {
+        game.splash("Здувся!")
+        startGame()
     }
 })
 forever(function () {
