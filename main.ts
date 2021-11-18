@@ -4,56 +4,6 @@ namespace SpriteKind {
     export const Fireball = SpriteKind.create()
     export const Task = SpriteKind.create()
 }
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (ammoLeft > 0) {
-        let facingLeft = 0
-        if (facingLeft == 0) {
-            projectile = sprites.createProjectileFromSprite(img`
-                . . . . . . . . . . . . . . . . 
-                . . . . d d d d d d d d . . . . 
-                . . . d d 3 3 3 3 3 3 d d . . . 
-                . . . d 3 3 d d 3 3 3 3 d d . . 
-                . . . d 3 d . d d 3 3 3 3 d . . 
-                . . d d 3 d . . . d d 3 3 d . . 
-                . . d 3 3 d . . . . d d 3 d . . 
-                . . d 3 3 d d . . . . d 3 d . . 
-                . . d d 3 3 d . . . . d 3 d . . 
-                . . . d 3 3 d d . . d d 3 d . . 
-                . . . d 3 3 3 d d d d 3 3 d . . 
-                . . . d d 3 3 3 3 3 3 3 3 d . . 
-                . . . . d d 3 3 3 3 d d d d . . 
-                . . . . . . d d d d d . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                `, Hops_and_Paw, 200, 0)
-        } else {
-            projectile = sprites.createProjectileFromSprite(img`
-                . . . . . . . . . . . . . . . . 
-                . . . . d d d d d d d d . . . . 
-                . . . d d 3 3 3 3 3 3 d d . . . 
-                . . . d 3 3 d d 3 3 3 3 d d . . 
-                . . . d 3 d . d d 3 3 3 3 d . . 
-                . . d d 3 d . . . d d 3 3 d . . 
-                . . d 3 3 d . . . . d d 3 d . . 
-                . . d 3 3 d d . . . . d 3 d . . 
-                . . d d 3 3 d . . . . d 3 d . . 
-                . . . d 3 3 d d . . d d 3 d . . 
-                . . . d 3 3 3 d d d d 3 3 d . . 
-                . . . d d 3 3 3 3 3 3 3 3 d . . 
-                . . . . d d 3 3 3 3 d d d d . . 
-                . . . . . . d d d d d . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                `, Hops_and_Paw, -200, 0)
-        }
-        ammoLeft += -1
-    }
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (Hops_and_Paw.vy == 0) {
-        Hops_and_Paw.vy = 0
-    }
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
     music.pewPew.play()
@@ -71,15 +21,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 let value: Sprite = null
 let n = 0
-let projectile: Sprite = null
-let ammoLeft = 0
-let Hops_and_Paw: Sprite = null
 scene.setBackgroundColor(11)
 effects.starField.startScreenEffect()
-Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
+let Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
 controller.moveSprite(Hops_and_Paw, 200, 200)
 Hops_and_Paw.setFlag(SpriteFlag.StayInScreen, true)
-ammoLeft = 0
+let ammoLeft = 0
 let speed = 1
 let projectileUpdate = 1000
 let projectileSpeed = 50
@@ -216,5 +163,12 @@ forever(function () {
         value.setFlag(SpriteFlag.AutoDestroy, true)
         taskUpdate = randint(3000, 10000)
         pause(taskUpdate)
+    }
+})
+forever(function () {
+    while (true) {
+        music.playTone(262, music.beat(BeatFraction.Half))
+        music.playTone(294, music.beat(BeatFraction.Half))
+        music.playTone(370, music.beat(BeatFraction.Half))
     }
 })
