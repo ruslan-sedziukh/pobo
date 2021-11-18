@@ -57,8 +57,6 @@ game.onUpdate(function () {
         gameOn = 0
         game.splash("Дедлайн наближається.")
         game.splash("Збільшити швидкість!")
-        game.splash(projectileSpeed)
-        game.splash(projectileUpdate)
         gameOn = 1
     } else if (info.score() == 10 && speed == 1) {
         projectileSpeed += projectileSpeedStep
@@ -67,8 +65,6 @@ game.onUpdate(function () {
         gameOn = 0
         game.splash("Дедлайн наближається.")
         game.splash("Збільшити швидкість!")
-        game.splash(projectileSpeed)
-        game.splash(projectileUpdate)
         gameOn = 1
     } else if (info.score() == 15 && speed == 2) {
         projectileSpeed += projectileSpeedStep
@@ -77,8 +73,6 @@ game.onUpdate(function () {
         gameOn = 0
         game.splash("Дедлайн наближається.")
         game.splash("Збільшити швидкість!")
-        game.splash(projectileSpeed)
-        game.splash(projectileUpdate)
         gameOn = 1
     } else if (info.score() == 20 && speed == 3) {
         projectileSpeed += projectileSpeedStep
@@ -87,8 +81,6 @@ game.onUpdate(function () {
         gameOn = 0
         game.splash("Дедлайн наближається.")
         game.splash("Збільшити швидкість!")
-        game.splash(projectileSpeed)
-        game.splash(projectileUpdate)
         gameOn = 1
     } else if (info.score() == 25 && speed == 4) {
         projectileSpeed += projectileSpeedStep
@@ -97,8 +89,6 @@ game.onUpdate(function () {
         gameOn = 0
         game.splash("Дедлайн наближається.")
         game.splash("Збільшити швидкість!")
-        game.splash(projectileSpeed)
-        game.splash(projectileUpdate)
         gameOn = 1
     } else {
     	
@@ -163,12 +153,5 @@ forever(function () {
         value.setFlag(SpriteFlag.AutoDestroy, true)
         taskUpdate = randint(3000, 10000)
         pause(taskUpdate)
-    }
-})
-forever(function () {
-    while (true) {
-        music.playTone(262, music.beat(BeatFraction.Half))
-        music.playTone(294, music.beat(BeatFraction.Half))
-        music.playTone(370, music.beat(BeatFraction.Half))
     }
 })
