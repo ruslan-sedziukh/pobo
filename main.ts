@@ -22,6 +22,7 @@ function startGame () {
     info.setLife(5)
     projectileSpeedStep = 25
     projectileUpdateStep = -150
+    gameTime = 0
     music.setVolume(20)
 }
 function intro () {
@@ -60,6 +61,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 let value: Sprite = null
 let n = 0
+let gameTime = 0
 let projectileUpdateStep = 0
 let projectileSpeedStep = 0
 let gameOn = 0
@@ -149,10 +151,10 @@ forever(function () {
     }
 })
 forever(function () {
-    if (game.runtime() < 5000) {
-        pause(donutsUpdate)
-    }
     while (gameOn) {
+        if (gameTime < 5000) {
+            pause(donutsUpdate)
+        }
         n = randint(1, 6)
         if (n == 1) {
             value = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
@@ -175,10 +177,10 @@ forever(function () {
     }
 })
 forever(function () {
-    if (game.runtime() < 5000) {
-        pause(taskUpdate)
-    }
     while (gameOn) {
+        if (gameTime < 5000) {
+            pause(taskUpdate)
+        }
         value = sprites.create(assets.image`Task`, SpriteKind.Task)
         value.setPosition(randint(5, 155), 0)
         value.setVelocity(0, projectileSpeed)
@@ -186,4 +188,7 @@ forever(function () {
         taskUpdate = randint(3000, 10000)
         pause(taskUpdate)
     }
+})
+game.onUpdateInterval(500, function () {
+    gameTime += 500
 })
