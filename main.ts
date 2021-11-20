@@ -154,39 +154,41 @@ forever(function () {
     while (gameOn) {
         if (gameTime < 5000) {
             pause(donutsUpdate)
-        }
-        n = randint(1, 6)
-        if (n == 1) {
-            value = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
-        } else if (n == 2) {
-            value = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
-        } else if (n == 3) {
-            value = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
-        } else if (n == 4) {
-            value = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
-        } else if (n == 5) {
-            value = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
         } else {
-            value = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
+            n = randint(1, 6)
+            if (n == 1) {
+                value = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
+            } else if (n == 2) {
+                value = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
+            } else if (n == 3) {
+                value = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
+            } else if (n == 4) {
+                value = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
+            } else if (n == 5) {
+                value = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
+            } else {
+                value = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
+            }
+            value.setPosition(randint(5, 155), 0)
+            value.setVelocity(0, projectileSpeed)
+            value.setFlag(SpriteFlag.AutoDestroy, true)
+            donutsUpdate = randint(3000, 10000)
+            pause(donutsUpdate)
         }
-        value.setPosition(randint(5, 155), 0)
-        value.setVelocity(0, projectileSpeed)
-        value.setFlag(SpriteFlag.AutoDestroy, true)
-        donutsUpdate = randint(3000, 10000)
-        pause(donutsUpdate)
     }
 })
 forever(function () {
     while (gameOn) {
         if (gameTime < 5000) {
             pause(taskUpdate)
+        } else {
+            value = sprites.create(assets.image`Task`, SpriteKind.Task)
+            value.setPosition(randint(5, 155), 0)
+            value.setVelocity(0, projectileSpeed)
+            value.setFlag(SpriteFlag.AutoDestroy, true)
+            taskUpdate = randint(3000, 10000)
+            pause(taskUpdate)
         }
-        value = sprites.create(assets.image`Task`, SpriteKind.Task)
-        value.setPosition(randint(5, 155), 0)
-        value.setVelocity(0, projectileSpeed)
-        value.setFlag(SpriteFlag.AutoDestroy, true)
-        taskUpdate = randint(3000, 10000)
-        pause(taskUpdate)
     }
 })
 game.onUpdateInterval(500, function () {
