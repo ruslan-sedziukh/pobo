@@ -36,6 +36,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     } else {
         gameOn = 0
         game.splash("Здувся!")
+        music.playMelody("C D E F G A B C5 ", 120)
         Hops_and_Paw.destroy()
         for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
             value.destroy()
