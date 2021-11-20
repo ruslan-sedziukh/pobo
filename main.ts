@@ -28,9 +28,14 @@ function intro () {
 	
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    music.pewPew.play()
-    info.changeLifeBy(-1)
+    if (info.life() > 1) {
+        otherSprite.destroy()
+        music.pewPew.play()
+        info.changeLifeBy(-1)
+    } else {
+        game.splash("Здувся!")
+        startGame()
+    }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -108,10 +113,6 @@ game.onUpdate(function () {
         gameOn = 1
     } else {
     	
-    }
-    if (info.life() == 0) {
-        game.splash("Здувся!")
-        startGame()
     }
 })
 forever(function () {
