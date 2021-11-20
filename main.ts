@@ -33,7 +33,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         music.pewPew.play()
         info.changeLifeBy(-1)
     } else {
+        gameOn = 0
         game.splash("Здувся!")
+        Hops_and_Paw.destroy()
+        for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
+            value.destroy()
+        }
+        for (let value of sprites.allOfKind(SpriteKind.Food)) {
+            value.destroy()
+        }
+        for (let value of sprites.allOfKind(SpriteKind.Task)) {
+            value.destroy()
+        }
         startGame()
     }
 })
