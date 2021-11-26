@@ -4,7 +4,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "animation": "*"
+        "animation": "*",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3"
     },
     "files": [
         "main.blocks",
@@ -22,7 +23,7 @@
         "branch": "v0.15.16",
         "tag": "v0.15.16",
         "commits": "https://github.com/microsoft/pxt-arcade/commits/8b7233254cf52189d669a0590117a7824e1b3513",
-        "target": "1.7.16",
+        "target": "1.7.21",
         "pxt": "5.30.41",
         "targetId": "arcade"
     },
