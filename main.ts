@@ -8,6 +8,7 @@ function startGame () {
     scene.setBackgroundColor(11)
     effects.starField.startScreenEffect()
     Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
+    Hops_and_Paw.z = 2
     controller.moveSprite(Hops_and_Paw, 200, 200)
     Hops_and_Paw.setFlag(SpriteFlag.StayInScreen, true)
     ammoLeft = 0
@@ -147,6 +148,7 @@ forever(function () {
         }
         value.setPosition(randint(5, 155), 0)
         value.setVelocity(0, projectileSpeed)
+        value.z = 2
         value.setFlag(SpriteFlag.AutoDestroy, true)
         pause(projectileUpdate)
     }
@@ -186,6 +188,7 @@ forever(function () {
             }
             value.setPosition(randint(5, 155), 0)
             value.setVelocity(0, projectileSpeed)
+            value.z = 2
             value.setFlag(SpriteFlag.AutoDestroy, true)
             donutsUpdate = randint(3000, 10000)
             pause(donutsUpdate)
