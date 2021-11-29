@@ -220,13 +220,13 @@ forever(function () {
         } else {
             value = sprites.create(assets.image`Task`, SpriteKind.Task)
             position = randint(5, 155)
+            picPosition()
             value.setPosition(position, 0)
             value.setVelocity(0, projectileSpeed)
             value.setFlag(SpriteFlag.AutoDestroy, true)
             objectGeneratingIndex[2][0] = position
             objectGeneratingIndex[2][1] = game.runtime()
             taskUpdate = randint(3000, 10000)
-            picPosition()
             pause(taskUpdate)
         }
     }
