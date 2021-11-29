@@ -73,6 +73,13 @@ function picPosition () {
             gameOn = 1
         }
     }
+    if (list.length > 1) {
+        for (let index = 0; index <= list.length - 1; index++) {
+            if (true) {
+            	
+            }
+        }
+    }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
