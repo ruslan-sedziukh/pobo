@@ -63,19 +63,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSpr
 })
 function picPosition () {
     timeToMove = 11 / projectileSpeed * 1000
-    gameOn = 0
-    game.splash("timeToMove", timeToMove)
-    gameOn = 1
     list = []
     for (let index = 0; index <= objectGeneratingIndex.length - 1; index++) {
         if (game.runtime() - objectGeneratingIndex[index][1] < timeToMove) {
             list[index] = objectGeneratingIndex[index][0]
             gameOn = 0
+            game.splash("timeToMove", timeToMove)
             game.splash("list element x", list[index])
             gameOn = 1
         }
     }
-    x1 = 0
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -85,7 +82,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 let position = 0
 let value: Sprite = null
 let n = 0
-let x1 = 0
 let list: number[] = []
 let timeToMove = 0
 let objectGeneratingIndex: number[][] = []
