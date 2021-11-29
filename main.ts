@@ -25,6 +25,11 @@ function startGame () {
     projectileUpdateStep = -150
     gameTime = 0
     music.setVolume(20)
+    objectGeneratingIndex = [
+    [0, 0],
+    [0, 0],
+    [0, 0]
+    ]
 }
 function intro () {
 	
@@ -56,13 +61,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSpr
     music.baDing.play()
     otherSprite.destroy()
 })
+function picPosition () {
+	
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
     music.jumpUp.play()
     info.changeLifeBy(1)
 })
+let position = 0
 let value: Sprite = null
 let n = 0
+let objectGeneratingIndex: number[][] = []
 let gameTime = 0
 let projectileUpdateStep = 0
 let projectileSpeedStep = 0
@@ -146,25 +156,14 @@ forever(function () {
         } else {
             value = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
         }
-        value.setPosition(randint(5, 155), 0)
+        position = randint(5, 155)
+        value.setPosition(position, 0)
         value.setVelocity(0, projectileSpeed)
         value.z = 2
         value.setFlag(SpriteFlag.AutoDestroy, true)
+        objectGeneratingIndex[0][0] = position
+        objectGeneratingIndex[0][1] = game.runtime()
         pause(projectileUpdate)
-    }
-})
-forever(function () {
-    while (gameOn) {
-        if (gameTime < 5000) {
-            pause(taskUpdate)
-        } else {
-            value = sprites.create(assets.image`Task`, SpriteKind.Task)
-            value.setPosition(randint(5, 155), 0)
-            value.setVelocity(0, projectileSpeed)
-            value.setFlag(SpriteFlag.AutoDestroy, true)
-            taskUpdate = randint(3000, 10000)
-            pause(taskUpdate)
-        }
     }
 })
 forever(function () {
@@ -186,12 +185,32 @@ forever(function () {
             } else {
                 value = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
             }
-            value.setPosition(randint(5, 155), 0)
+            position = randint(5, 155)
+            value.setPosition(position, 0)
             value.setVelocity(0, projectileSpeed)
             value.z = 2
             value.setFlag(SpriteFlag.AutoDestroy, true)
+            objectGeneratingIndex[1][0] = position
+            objectGeneratingIndex[1][1] = game.runtime()
             donutsUpdate = randint(3000, 10000)
             pause(donutsUpdate)
+        }
+    }
+})
+forever(function () {
+    while (gameOn) {
+        if (gameTime < 5000) {
+            pause(taskUpdate)
+        } else {
+            value = sprites.create(assets.image`Task`, SpriteKind.Task)
+            position = randint(5, 155)
+            value.setPosition(position, 0)
+            value.setVelocity(0, projectileSpeed)
+            value.setFlag(SpriteFlag.AutoDestroy, true)
+            objectGeneratingIndex[2][0] = position
+            objectGeneratingIndex[2][1] = game.runtime()
+            taskUpdate = randint(3000, 10000)
+            pause(taskUpdate)
         }
     }
 })
