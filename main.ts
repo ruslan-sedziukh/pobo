@@ -68,8 +68,6 @@ function picPosition () {
         if (game.runtime() - objectGeneratingIndex[index][1] < timeToMove) {
             list[index] = objectGeneratingIndex[index][0]
             gameOn = 0
-            game.splash("timeToMove", timeToMove)
-            game.splash("list element x", list[index])
             gameOn = 1
         }
     }
@@ -100,9 +98,21 @@ function picPosition () {
         }
     }
     if (list.length == 1) {
-    	
-    } else if (list.length > 1) {
-    	
+        n = randint(1, 2)
+        if (n == 1) {
+            position = randint(5, list[0])
+        } else {
+            position = randint(list[0] + 12, 155)
+        }
+    } else if (list.length == 2) {
+        n = randint(1, 3)
+        if (n == 1) {
+            position = randint(5, list[0])
+        } else if (n == 2) {
+            position = randint(list[0] + 12, list[1])
+        } else {
+            position = randint(list[1] + 12, 155)
+        }
     } else {
         position = randint(5, 155)
     }
@@ -113,8 +123,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeLifeBy(1)
 })
 let value: Sprite = null
-let n = 0
 let position = 0
+let n = 0
 let i = 0
 let bigOne = 0
 let smallOne = 0
@@ -204,7 +214,7 @@ forever(function () {
         } else {
             value = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
         }
-        position = randint(5, 155)
+        picPosition()
         value.setPosition(position, 0)
         value.setVelocity(0, projectileSpeed)
         value.z = 2
@@ -233,7 +243,7 @@ forever(function () {
             } else {
                 value = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
             }
-            position = randint(5, 155)
+            picPosition()
             value.setPosition(position, 0)
             value.setVelocity(0, projectileSpeed)
             value.z = 2
@@ -251,7 +261,6 @@ forever(function () {
             pause(taskUpdate)
         } else {
             value = sprites.create(assets.image`Task`, SpriteKind.Task)
-            position = randint(5, 155)
             picPosition()
             value.setPosition(position, 0)
             value.setVelocity(0, projectileSpeed)
