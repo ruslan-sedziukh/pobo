@@ -5,7 +5,8 @@
     "dependencies": {
         "device": "*",
         "animation": "*",
-        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3"
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
+        "PB 0-20": "github:r-sed/pb#master"
     },
     "files": [
         "main.blocks",
