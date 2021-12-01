@@ -75,10 +75,36 @@ function picPosition () {
     }
     if (list.length > 1) {
         for (let index = 0; index <= list.length - 1; index++) {
-            if (true) {
-            	
+            if (list.length - index >= 2) {
+                if (list[index] > list[index + 1]) {
+                    smallOne = list[index + 1]
+                    bigOne = list[index]
+                    list[index] = smallOne
+                    list[index + 1] = bigOne
+                    i = index
+                    while (i > 0) {
+                        if (list[i - 1] > list[i]) {
+                            smallOne = list[i]
+                            bigOne = list[i - 1]
+                            list[i] = bigOne
+                            list[i - 1] = smallOne
+                            i += -1
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            } else {
+                break;
             }
         }
+    }
+    if (list.length == 1) {
+    	
+    } else if (list.length > 1) {
+    	
+    } else {
+        position = randint(5, 155)
     }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -86,9 +112,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     music.jumpUp.play()
     info.changeLifeBy(1)
 })
-let position = 0
 let value: Sprite = null
 let n = 0
+let position = 0
+let i = 0
+let bigOne = 0
+let smallOne = 0
 let list: number[] = []
 let timeToMove = 0
 let objectGeneratingIndex: number[][] = []
