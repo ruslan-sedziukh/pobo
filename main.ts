@@ -98,20 +98,33 @@ function picPosition () {
         }
     }
     if (list.length == 1) {
-        n = randint(1, 2)
-        if (n == 1) {
-            position = randint(5, list[0])
+        if (list[0] + 12 < 155) {
+            n = randint(1, 2)
+            if (n == 1) {
+                position = randint(5, list[0] - 12)
+            } else {
+                position = randint(list[0] + 12, 155)
+            }
         } else {
-            position = randint(list[0] + 12, 155)
+            position = randint(5, list[0] - 12)
         }
     } else if (list.length == 2) {
-        n = randint(1, 3)
-        if (n == 1) {
-            position = randint(5, list[0])
-        } else if (n == 2) {
-            position = randint(list[0] + 12, list[1])
+        if (list[1] + 12 < 155) {
+            n = randint(1, 3)
+            if (n == 1) {
+                position = randint(5, list[0] - 12)
+            } else if (n == 2) {
+                position = randint(list[0] + 12, list[1] - 12)
+            } else {
+                position = randint(list[1] + 12, 155)
+            }
         } else {
-            position = randint(list[1] + 12, 155)
+            n = randint(1, 2)
+            if (n == 1) {
+                position = randint(5, list[0] - 12)
+            } else if (n == 2) {
+                position = randint(list[0] + 12, list[1] - 12)
+            }
         }
     } else {
         position = randint(5, 155)
