@@ -144,9 +144,11 @@ function getX () {
     }
 }
 function getList () {
+    i = 0
     for (let index = 0; index <= objectGeneratingIndex.length - 1; index++) {
         if (game.runtime() - objectGeneratingIndex[index][1] < timeToMove) {
-            list[index] = objectGeneratingIndex[index][0]
+            list[i] = objectGeneratingIndex[index][0]
+            i += 1
         }
     }
 }
