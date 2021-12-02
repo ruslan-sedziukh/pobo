@@ -25,11 +25,7 @@ function startGame () {
     projectileUpdateStep = -150
     gameTime = 0
     music.setVolume(20)
-    objectGeneratingIndex = [
-    [0, 0],
-    [0, 0],
-    [0, 0]
-    ]
+    objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
 }
 function intro () {
 	
@@ -47,11 +43,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
             value.destroy()
         }
-        for (let value of sprites.allOfKind(SpriteKind.Food)) {
-            value.destroy()
+        for (let value2 of sprites.allOfKind(SpriteKind.Food)) {
+            value2.destroy()
         }
-        for (let value of sprites.allOfKind(SpriteKind.Task)) {
-            value.destroy()
+        for (let value3 of sprites.allOfKind(SpriteKind.Task)) {
+            value3.destroy()
         }
         startGame()
     }
@@ -64,22 +60,25 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSpr
 function picPosition () {
     timeToMove = 11 / projectileSpeed * 1000
     list = []
-    for (let index = 0; index <= objectGeneratingIndex.length - 1; index++) {
-        if (game.runtime() - objectGeneratingIndex[index][1] < timeToMove) {
-            list[index] = objectGeneratingIndex[index][0]
-            gameOn = 0
-            gameOn = 1
-        }
-    }
+    getList()
+    sortList()
+    getX()
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    music.jumpUp.play()
+    info.changeLifeBy(1)
+})
+function sortList () {
     if (list.length > 1) {
-        for (let index = 0; index <= list.length - 1; index++) {
-            if (list.length - index >= 2) {
-                if (list[index] > list[index + 1]) {
-                    smallOne = list[index + 1]
-                    bigOne = list[index]
-                    list[index] = smallOne
-                    list[index + 1] = bigOne
-                    i = index
+        for (let index2 = 0; index2 <= testList.length - 1; index2++) {
+            if (list.length - index2 >= 2) {
+                if (list[index2] > list[index2 + 1]) {
+                    smallOne = list[index2 + 1]
+                    bigOne = list[index2]
+                    list[index2] = smallOne
+                    list[index2 + 1] = bigOne
+                    i = index2
                     while (i > 0) {
                         if (list[i - 1] > list[i]) {
                             smallOne = list[i]
@@ -97,45 +96,44 @@ function picPosition () {
             }
         }
     }
+}
+function getX () {
     if (list.length == 1) {
         if (list[0] + 12 < 155) {
             n = randint(1, 2)
-            if (n == 1) {
-                position = randint(5, list[0] - 12)
-            } else {
-                position = randint(list[0] + 12, 155)
-            }
         } else {
+            n = 1
+        }
+        if (n == 1) {
             position = randint(5, list[0] - 12)
+        } else {
+            position = randint(list[0] + 12, 155)
         }
     } else if (list.length == 2) {
         if (list[1] + 12 < 155) {
             n = randint(1, 3)
-            if (n == 1) {
-                position = randint(5, list[0] - 12)
-            } else if (n == 2) {
-                position = randint(list[0] + 12, list[1] - 12)
-            } else {
-                position = randint(list[1] + 12, 155)
-            }
         } else {
             n = randint(1, 2)
-            if (n == 1) {
-                position = randint(5, list[0] - 12)
-            } else if (n == 2) {
-                position = randint(list[0] + 12, list[1] - 12)
-            }
+        }
+        if (n == 1) {
+            position = randint(5, list[0] - 12)
+        } else if (n == 2) {
+            position = randint(list[0] + 12, list[1] - 12)
+        } else {
+            position = randint(list[1] + 12, 155)
         }
     } else {
         position = randint(5, 155)
     }
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    music.jumpUp.play()
-    info.changeLifeBy(1)
-})
-let value: Sprite = null
+function getList () {
+    for (let index = 0; index <= objectGeneratingIndex.length - 1; index++) {
+        if (game.runtime() - objectGeneratingIndex[index][1] < timeToMove) {
+            list[index] = objectGeneratingIndex[index][0]
+        }
+    }
+}
+let value4: Sprite = null
 let position = 0
 let n = 0
 let i = 0
@@ -155,7 +153,23 @@ let projectileUpdate = 0
 let speed = 0
 let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
+let testList: number[] = []
 startGame()
+testList = [
+1100,
+7,
+5,
+2,
+4,
+0,
+250000,
+35
+]
+console.log("unsorted testList")
+console.log(testList)
+sortList()
+console.log("sorted testList")
+console.log(testList)
 game.onUpdate(function () {
     if (Hops_and_Paw.vx < 0) {
         Hops_and_Paw.setImage(assets.image`Hero - left`)
@@ -215,23 +229,23 @@ forever(function () {
     while (gameOn) {
         n = randint(1, 6)
         if (n == 1) {
-            value = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
+            value4 = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
         } else if (n == 2) {
-            value = sprites.create(assets.image`YouTube`, SpriteKind.Projectile)
+            value4 = sprites.create(assets.image`YouTube`, SpriteKind.Projectile)
         } else if (n == 3) {
-            value = sprites.create(assets.image`Twitter`, SpriteKind.Projectile)
+            value4 = sprites.create(assets.image`Twitter`, SpriteKind.Projectile)
         } else if (n == 4) {
-            value = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
+            value4 = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
         } else if (n == 5) {
-            value = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
+            value4 = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
         } else {
-            value = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
+            value4 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
         }
         picPosition()
-        value.setPosition(position, 0)
-        value.setVelocity(0, projectileSpeed)
-        value.z = 2
-        value.setFlag(SpriteFlag.AutoDestroy, true)
+        value4.setPosition(position, 0)
+        value4.setVelocity(0, projectileSpeed)
+        value4.z = 2
+        value4.setFlag(SpriteFlag.AutoDestroy, true)
         objectGeneratingIndex[0][0] = position
         objectGeneratingIndex[0][1] = game.runtime()
         pause(projectileUpdate)
@@ -244,23 +258,23 @@ forever(function () {
         } else {
             n = randint(1, 6)
             if (n == 1) {
-                value = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
+                value4 = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
             } else if (n == 2) {
-                value = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
+                value4 = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
             } else if (n == 3) {
-                value = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
+                value4 = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
             } else if (n == 4) {
-                value = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
+                value4 = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
             } else if (n == 5) {
-                value = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
+                value4 = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
             } else {
-                value = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
+                value4 = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
             }
             picPosition()
-            value.setPosition(position, 0)
-            value.setVelocity(0, projectileSpeed)
-            value.z = 2
-            value.setFlag(SpriteFlag.AutoDestroy, true)
+            value4.setPosition(position, 0)
+            value4.setVelocity(0, projectileSpeed)
+            value4.z = 2
+            value4.setFlag(SpriteFlag.AutoDestroy, true)
             objectGeneratingIndex[1][0] = position
             objectGeneratingIndex[1][1] = game.runtime()
             donutsUpdate = randint(3000, 10000)
@@ -273,11 +287,11 @@ forever(function () {
         if (gameTime < 5000) {
             pause(taskUpdate)
         } else {
-            value = sprites.create(assets.image`Task`, SpriteKind.Task)
+            value4 = sprites.create(assets.image`Task`, SpriteKind.Task)
             picPosition()
-            value.setPosition(position, 0)
-            value.setVelocity(0, projectileSpeed)
-            value.setFlag(SpriteFlag.AutoDestroy, true)
+            value4.setPosition(position, 0)
+            value4.setVelocity(0, projectileSpeed)
+            value4.setFlag(SpriteFlag.AutoDestroy, true)
             objectGeneratingIndex[2][0] = position
             objectGeneratingIndex[2][1] = game.runtime()
             taskUpdate = randint(3000, 10000)
