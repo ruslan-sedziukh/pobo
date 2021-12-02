@@ -75,11 +75,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSpr
     otherSprite.destroy()
 })
 function picPosition () {
+    console.log("-- inside picPosition --")
     timeToMove = 11 / projectileSpeed * 1000
     list = []
     getList()
+    console.log("unsorted list")
+    console.log(list)
     sortList()
+    console.log("sorted list")
+    console.log(list)
     getX()
+    console.log("postition")
+    console.log(position)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -153,11 +160,11 @@ function getList () {
     }
 }
 let value4: Sprite = null
-let position = 0
 let n = 0
 let i = 0
 let bigOne = 0
 let smallOne = 0
+let position = 0
 let timeToMove = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
@@ -276,12 +283,22 @@ forever(function () {
         } else {
             value4 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
         }
+        console.log("-------------------------")
+        console.log(".........................")
+        console.log("*** Projectile ***")
         picPosition()
+        console.log("-- outside picPosition --")
+        console.log("position")
+        console.log(position)
         value4.setPosition(position, 0)
         value4.setVelocity(0, projectileSpeed)
         value4.z = 2
         value4.setFlag(SpriteFlag.AutoDestroy, true)
         objectGeneratingIndex[0][0] = position
+        console.log("sprite x")
+        console.log(value4.x)
+        console.log("position")
+        console.log(position)
         objectGeneratingIndex[0][1] = game.runtime()
         pause(projectileUpdate)
     }
