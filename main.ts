@@ -88,8 +88,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 function sortList () {
     if (list.length > 1) {
-        let testList: number[] = []
-        for (let index2 = 0; index2 <= testList.length - 1; index2++) {
+        for (let index2 = 0; index2 <= list.length - 1; index2++) {
             if (list.length - index2 >= 2) {
                 if (list[index2] > list[index2 + 1]) {
                     smallOne = list[index2 + 1]
@@ -172,6 +171,7 @@ let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
 let list: number[] = []
 startGame()
+testListSort()
 game.onUpdate(function () {
     if (Hops_and_Paw.vx < 0) {
         Hops_and_Paw.setImage(assets.image`Hero - left`)
