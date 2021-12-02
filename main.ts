@@ -4,6 +4,23 @@ namespace SpriteKind {
     export const Fireball = SpriteKind.create()
     export const Task = SpriteKind.create()
 }
+function testListSort () {
+    list = [
+    1100,
+    7,
+    5,
+    2,
+    4,
+    0,
+    250000,
+    35
+    ]
+    console.log("unsorted list")
+    console.log(list)
+    sortList()
+    console.log("sorted list")
+    console.log(list)
+}
 function startGame () {
     scene.setBackgroundColor(11)
     effects.starField.startScreenEffect()
@@ -71,6 +88,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 function sortList () {
     if (list.length > 1) {
+        let testList: number[] = []
         for (let index2 = 0; index2 <= testList.length - 1; index2++) {
             if (list.length - index2 >= 2) {
                 if (list[index2] > list[index2 + 1]) {
@@ -139,7 +157,6 @@ let n = 0
 let i = 0
 let bigOne = 0
 let smallOne = 0
-let list: number[] = []
 let timeToMove = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
@@ -153,23 +170,8 @@ let projectileUpdate = 0
 let speed = 0
 let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
-let testList: number[] = []
+let list: number[] = []
 startGame()
-testList = [
-1100,
-7,
-5,
-2,
-4,
-0,
-250000,
-35
-]
-console.log("unsorted testList")
-console.log(testList)
-sortList()
-console.log("sorted testList")
-console.log(testList)
 game.onUpdate(function () {
     if (Hops_and_Paw.vx < 0) {
         Hops_and_Paw.setImage(assets.image`Hero - left`)
@@ -227,32 +229,6 @@ game.onUpdate(function () {
 })
 forever(function () {
     while (gameOn) {
-        n = randint(1, 6)
-        if (n == 1) {
-            value4 = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
-        } else if (n == 2) {
-            value4 = sprites.create(assets.image`YouTube`, SpriteKind.Projectile)
-        } else if (n == 3) {
-            value4 = sprites.create(assets.image`Twitter`, SpriteKind.Projectile)
-        } else if (n == 4) {
-            value4 = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
-        } else if (n == 5) {
-            value4 = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
-        } else {
-            value4 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
-        }
-        picPosition()
-        value4.setPosition(position, 0)
-        value4.setVelocity(0, projectileSpeed)
-        value4.z = 2
-        value4.setFlag(SpriteFlag.AutoDestroy, true)
-        objectGeneratingIndex[0][0] = position
-        objectGeneratingIndex[0][1] = game.runtime()
-        pause(projectileUpdate)
-    }
-})
-forever(function () {
-    while (gameOn) {
         if (gameTime < 5000) {
             pause(donutsUpdate)
         } else {
@@ -280,6 +256,32 @@ forever(function () {
             donutsUpdate = randint(3000, 10000)
             pause(donutsUpdate)
         }
+    }
+})
+forever(function () {
+    while (gameOn) {
+        n = randint(1, 6)
+        if (n == 1) {
+            value4 = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
+        } else if (n == 2) {
+            value4 = sprites.create(assets.image`YouTube`, SpriteKind.Projectile)
+        } else if (n == 3) {
+            value4 = sprites.create(assets.image`Twitter`, SpriteKind.Projectile)
+        } else if (n == 4) {
+            value4 = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
+        } else if (n == 5) {
+            value4 = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
+        } else {
+            value4 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
+        }
+        picPosition()
+        value4.setPosition(position, 0)
+        value4.setVelocity(0, projectileSpeed)
+        value4.z = 2
+        value4.setFlag(SpriteFlag.AutoDestroy, true)
+        objectGeneratingIndex[0][0] = position
+        objectGeneratingIndex[0][1] = game.runtime()
+        pause(projectileUpdate)
     }
 })
 forever(function () {
