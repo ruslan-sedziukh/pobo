@@ -123,10 +123,12 @@ function sortList () {
 }
 function getX () {
     if (list.length == 1) {
-        if (list[0] + 12 < 155) {
-            n = randint(1, 2)
-        } else {
+        if (list[0] + 12 >= 155) {
             n = 1
+        } else if (list[0] - 12 <= 5) {
+            n = 2
+        } else {
+            n = randint(1, 2)
         }
         if (n == 1) {
             position = randint(5, list[0] - 12)
@@ -134,10 +136,14 @@ function getX () {
             position = randint(list[0] + 12, 155)
         }
     } else if (list.length == 2) {
-        if (list[1] + 12 < 155) {
-            n = randint(1, 3)
-        } else {
+        if (list[0] - 12 <= 5 && list[0] + 12 >= 155) {
+            n = 2
+        } else if (list[0] - 12 <= 5 && list[0] + 12 < 155) {
+            n = randint(2, 3)
+        } else if (list[0] - 12 > 5 && list[0] + 12 >= 155) {
             n = randint(1, 2)
+        } else if (list[0] - 12 > 5 && list[0] + 12 < 155) {
+            n = randint(1, 3)
         }
         if (n == 1) {
             position = randint(5, list[0] - 12)
