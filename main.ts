@@ -47,6 +47,12 @@ function startGame () {
 function intro () {
 	
 }
+function startIntro () {
+    scene.setBackgroundColor(11)
+}
+function testDialogs () {
+	
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     if (info.life() > 1) {
         otherSprite.destroy()
@@ -121,6 +127,11 @@ function sortList () {
         }
     }
 }
+function start () {
+    gameOn = 0
+    gameTime = 0
+    gameStart = 0
+}
 function getX () {
     if (list.length == 1) {
         if (list[0] + 12 >= 154) {
@@ -167,6 +178,7 @@ function getList () {
 }
 let value4: Sprite = null
 let n = 0
+let gameStart = 0
 let i = 0
 let bigOne = 0
 let smallOne = 0
@@ -185,61 +197,63 @@ let speed = 0
 let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
 let list: number[] = []
-startGame()
-testListSort()
+start()
+startIntro()
 game.onUpdate(function () {
-    if (Hops_and_Paw.vx < 0) {
-        Hops_and_Paw.setImage(assets.image`Hero - left`)
-    } else if (Hops_and_Paw.vx > 0) {
-        Hops_and_Paw.setImage(assets.image`Hero - right`)
-    } else {
-        Hops_and_Paw.setImage(assets.image`Hero - direct`)
-    }
-    if (info.life() == 0) {
-        gameOn = 0
-    }
-    if (info.score() == 5 && speed == 0) {
-        projectileSpeed += projectileSpeedStep
-        projectileUpdate += projectileUpdateStep
-        speed += 1
-        gameOn = 0
-        game.splash("Дедлайн наближається.")
-        game.splash("Збільшити швидкість!")
-        gameOn = 1
-    } else if (info.score() == 10 && speed == 1) {
-        projectileSpeed += projectileSpeedStep
-        projectileUpdate += projectileUpdateStep
-        speed += 1
-        gameOn = 0
-        game.splash("Дедлайн наближається.")
-        game.splash("Збільшити швидкість!")
-        gameOn = 1
-    } else if (info.score() == 15 && speed == 2) {
-        projectileSpeed += projectileSpeedStep
-        projectileUpdate += projectileUpdateStep
-        speed += 1
-        gameOn = 0
-        game.splash("Дедлайн наближається.")
-        game.splash("Збільшити швидкість!")
-        gameOn = 1
-    } else if (info.score() == 20 && speed == 3) {
-        projectileSpeed += projectileSpeedStep
-        projectileUpdate += projectileUpdateStep
-        speed += 1
-        gameOn = 0
-        game.splash("Дедлайн наближається.")
-        game.splash("Збільшити швидкість!")
-        gameOn = 1
-    } else if (info.score() == 25 && speed == 4) {
-        projectileSpeed += projectileSpeedStep
-        projectileUpdate += projectileUpdateStep
-        speed += 1
-        gameOn = 0
-        game.splash("Дедлайн наближається.")
-        game.splash("Збільшити швидкість!")
-        gameOn = 1
-    } else {
-    	
+    if (gameStart) {
+        if (Hops_and_Paw.vx < 0) {
+            Hops_and_Paw.setImage(assets.image`Hero - left`)
+        } else if (Hops_and_Paw.vx > 0) {
+            Hops_and_Paw.setImage(assets.image`Hero - right`)
+        } else {
+            Hops_and_Paw.setImage(assets.image`Hero - direct`)
+        }
+        if (info.life() == 0) {
+            gameOn = 0
+        }
+        if (info.score() == 5 && speed == 0) {
+            projectileSpeed += projectileSpeedStep
+            projectileUpdate += projectileUpdateStep
+            speed += 1
+            gameOn = 0
+            game.splash("Дедлайн наближається.")
+            game.splash("Збільшити швидкість!")
+            gameOn = 1
+        } else if (info.score() == 10 && speed == 1) {
+            projectileSpeed += projectileSpeedStep
+            projectileUpdate += projectileUpdateStep
+            speed += 1
+            gameOn = 0
+            game.splash("Дедлайн наближається.")
+            game.splash("Збільшити швидкість!")
+            gameOn = 1
+        } else if (info.score() == 15 && speed == 2) {
+            projectileSpeed += projectileSpeedStep
+            projectileUpdate += projectileUpdateStep
+            speed += 1
+            gameOn = 0
+            game.splash("Дедлайн наближається.")
+            game.splash("Збільшити швидкість!")
+            gameOn = 1
+        } else if (info.score() == 20 && speed == 3) {
+            projectileSpeed += projectileSpeedStep
+            projectileUpdate += projectileUpdateStep
+            speed += 1
+            gameOn = 0
+            game.splash("Дедлайн наближається.")
+            game.splash("Збільшити швидкість!")
+            gameOn = 1
+        } else if (info.score() == 25 && speed == 4) {
+            projectileSpeed += projectileSpeedStep
+            projectileUpdate += projectileUpdateStep
+            speed += 1
+            gameOn = 0
+            game.splash("Дедлайн наближається.")
+            game.splash("Збільшити швидкість!")
+            gameOn = 1
+        } else {
+        	
+        }
     }
 })
 forever(function () {
@@ -347,5 +361,7 @@ forever(function () {
     }
 })
 game.onUpdateInterval(500, function () {
-    gameTime += 500
+    if (gameStart) {
+        gameTime += 500
+    }
 })
