@@ -396,6 +396,102 @@ dd6666666dd
 4444...4444
 eeee...eeee
 `;
+            case "image19":
+            case "Bosses Table":return img`
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+......eee......................eee......
+`;
+            case "image20":
+            case "myImage":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "image21":
+            case "Intro Boss":return img`
+...........
+...........
+...........
+...fffff...
+..fffffff..
+..fffffff..
+..ffdffff..
+..fdddddf..
+..d18d81d..
+...ddddd...
+...d444d...
+....ddd....
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11511ccc
+ccc11111ccc
+ddc11111cdd
+ddc11111cdd
+ddc11111cdd
+..fff4fff..
+..ccccccc..
+..ccccccc..
+..ccccccc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..cc...cc..
+..ff...ff..
+ffff...ffff
+ffff...ffff
+`;
         }
         return null;
     })

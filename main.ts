@@ -3,6 +3,7 @@ namespace SpriteKind {
     export const Flower = SpriteKind.create()
     export const Fireball = SpriteKind.create()
     export const Task = SpriteKind.create()
+    export const decoration = SpriteKind.create()
 }
 function testListSort () {
     list = [
@@ -49,11 +50,19 @@ function intro () {
 	
 }
 function startIntro () {
-    scene.setBackgroundColor(11)
+    scene.setBackgroundColor(9)
     Hops_and_Paw = sprites.create(assets.image`Intro Hero`, SpriteKind.Player)
-    controller.moveSprite(Hops_and_Paw, 100, 100)
-    tiles.placeOnRandomTile(Hops_and_Paw, assets.tile`myTile0`)
+    controller.moveSprite(Hops_and_Paw, 100, 0)
+    Hops_and_Paw.setPosition(12, 152)
+    Hops_and_Paw.ay = 200
     scene.cameraFollowSprite(Hops_and_Paw)
+    assettable = sprites.create(assets.image`Bosses Table`, SpriteKind.decoration)
+    assettable.setPosition(240, 164)
+    assettable.z = 1
+    boss = sprites.create(assets.image`Intro Boss`, SpriteKind.decoration)
+    boss.setPosition(240, 152)
+    boss.ay = 200
+    boss.z = 0
     tiles.setTilemap(tilemap`level5`)
 }
 function testDialogs () {
@@ -189,6 +198,8 @@ let bigOne = 0
 let smallOne = 0
 let position = 0
 let timeToMove = 0
+let boss: Sprite = null
+let assettable: Sprite = null
 let gameStart = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
