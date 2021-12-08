@@ -68,7 +68,6 @@ function startIntro () {
     tiles.setTilemap(tilemap`level5`)
     gameIntro = 1
     bossesDialog = 1
-    story.spriteSayText(Hops_and_Paw, ":)")
 }
 function testDialogs () {
 	
@@ -283,7 +282,8 @@ game.onUpdate(function () {
 game.onUpdate(function () {
     if (gameIntro) {
         if (boss.x - Hops_and_Paw.x <= 30 && bossesDialog) {
-            game.splash("ііі")
+            Hops_and_Paw.sayText("Йо, я тут.", 1500, false)
+            boss.sayText("Заходь давай.", 1500, false)
             bossesDialog = 0
         }
     }
