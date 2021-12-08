@@ -50,7 +50,11 @@ function intro () {
 }
 function startIntro () {
     scene.setBackgroundColor(11)
-    Hops_and_Paw = sprites.create(assets.image`Hero - right0`, SpriteKind.Player)
+    Hops_and_Paw = sprites.create(assets.image`Intro Hero`, SpriteKind.Player)
+    controller.moveSprite(Hops_and_Paw, 100, 100)
+    tiles.placeOnRandomTile(Hops_and_Paw, assets.tile`myTile0`)
+    scene.cameraFollowSprite(Hops_and_Paw)
+    tiles.setTilemap(tilemap`level5`)
 }
 function testDialogs () {
 	
