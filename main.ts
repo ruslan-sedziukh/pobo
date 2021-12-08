@@ -23,6 +23,7 @@ function testListSort () {
     console.log(list)
 }
 function startGame () {
+    gameIntro = 0
     scene.setBackgroundColor(11)
     effects.starField.startScreenEffect()
     Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
@@ -52,6 +53,7 @@ function intro () {
 function startIntro () {
     scene.setBackgroundColor(9)
     Hops_and_Paw = sprites.create(assets.image`Intro Hero`, SpriteKind.Player)
+    Hops_and_Paw.z = 2
     controller.moveSprite(Hops_and_Paw, 100, 0)
     Hops_and_Paw.setPosition(12, 152)
     Hops_and_Paw.ay = 200
@@ -59,11 +61,14 @@ function startIntro () {
     assettable = sprites.create(assets.image`Bosses Table`, SpriteKind.decoration)
     assettable.setPosition(240, 164)
     assettable.z = 1
-    boss = sprites.create(assets.image`Intro Boss`, SpriteKind.decoration)
+    boss = sprites.create(assets.image`Intro Boss`, SpriteKind.Player)
     boss.setPosition(240, 152)
     boss.ay = 200
     boss.z = 0
     tiles.setTilemap(tilemap`level5`)
+    gameIntro = 1
+    bossesDialog = 1
+    story.spriteSayText(Hops_and_Paw, ":)")
 }
 function testDialogs () {
 	
@@ -198,6 +203,7 @@ let bigOne = 0
 let smallOne = 0
 let position = 0
 let timeToMove = 0
+let bossesDialog = 0
 let boss: Sprite = null
 let assettable: Sprite = null
 let gameStart = 0
@@ -213,6 +219,7 @@ let projectileUpdate = 0
 let speed = 0
 let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
+let gameIntro = 0
 let list: number[] = []
 start()
 startIntro()
@@ -270,6 +277,14 @@ game.onUpdate(function () {
             gameOn = 1
         } else {
         	
+        }
+    }
+})
+game.onUpdate(function () {
+    if (gameIntro) {
+        if (boss.x - Hops_and_Paw.x <= 30 && bossesDialog) {
+            game.splash("ііі")
+            bossesDialog = 0
         }
     }
 })
