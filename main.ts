@@ -388,6 +388,11 @@ forever(function () {
         if (boss.x - Hops_and_Paw.x <= 50 && bossesDialog) {
             story.spriteSayText(Hops_and_Paw, "Йо, бос.")
             story.spriteSayText(boss, "Йо, заходь.")
+            story.spriteSayText(boss, "Керівництво постановило стратегічну ціль компанії.")
+            story.spriteSayText(boss, "Твоє завдання - досягнути цієї цілі!")
+            story.spriteSayText(Hops_and_Paw, "Якої цілі?")
+            story.spriteSayText(boss, "Щоб ми стали найкращою компанією у світі! ")
+            story.spriteSayText(Hops_and_Paw, "Так, босе!")
             bossesDialog = 0
         }
     }
