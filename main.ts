@@ -50,6 +50,7 @@ function intro () {
 }
 function startIntro () {
     scene.setBackgroundColor(11)
+    Hops_and_Paw = sprites.create(assets.image`Hero - right0`, SpriteKind.Player)
 }
 function testDialogs () {
 	
@@ -199,7 +200,7 @@ let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
 let list: number[] = []
 start()
-startGame()
+startIntro()
 game.onUpdate(function () {
     if (gameStart) {
         if (Hops_and_Paw.vx < 0) {
