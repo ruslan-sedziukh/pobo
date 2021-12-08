@@ -51,7 +51,7 @@ function intro () {
 	
 }
 function startIntro () {
-    scene.setBackgroundColor(9)
+    scene.setBackgroundColor(11)
     Hops_and_Paw = sprites.create(assets.image`Intro Hero`, SpriteKind.Player)
     Hops_and_Paw.z = 2
     controller.moveSprite(Hops_and_Paw, 100, 0)
