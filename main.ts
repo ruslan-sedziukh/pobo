@@ -43,6 +43,7 @@ function startGame () {
     gameTime = 0
     music.setVolume(20)
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
+    gameStart = 1
 }
 function intro () {
 	
@@ -178,12 +179,12 @@ function getList () {
 }
 let value4: Sprite = null
 let n = 0
-let gameStart = 0
 let i = 0
 let bigOne = 0
 let smallOne = 0
 let position = 0
 let timeToMove = 0
+let gameStart = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
 let projectileUpdateStep = 0
@@ -198,7 +199,7 @@ let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
 let list: number[] = []
 start()
-startIntro()
+startGame()
 game.onUpdate(function () {
     if (gameStart) {
         if (Hops_and_Paw.vx < 0) {
