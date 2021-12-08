@@ -279,15 +279,6 @@ game.onUpdate(function () {
         }
     }
 })
-game.onUpdate(function () {
-    if (gameIntro) {
-        if (boss.x - Hops_and_Paw.x <= 30 && bossesDialog) {
-            Hops_and_Paw.sayText("Йо, я тут.", 1500, false)
-            boss.sayText("Заходь давай.", 1500, false)
-            bossesDialog = 0
-        }
-    }
-})
 forever(function () {
     while (gameOn) {
         if (gameTime < 5000) {
@@ -389,6 +380,14 @@ forever(function () {
             objectGeneratingIndex[2][1] = game.runtime()
             taskUpdate = randint(3000, 10000)
             pause(taskUpdate)
+        }
+    }
+})
+forever(function () {
+    if (gameIntro) {
+        if (boss.x - Hops_and_Paw.x <= 50 && bossesDialog) {
+            story.spriteSayText(boss, "Йо, заходь.")
+            bossesDialog = 0
         }
     }
 })
