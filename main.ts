@@ -386,6 +386,7 @@ forever(function () {
 forever(function () {
     if (gameIntro) {
         if (boss.x - Hops_and_Paw.x <= 50 && bossesDialog) {
+            story.spriteSayText(Hops_and_Paw, "Йо, бос.")
             story.spriteSayText(boss, "Йо, заходь.")
             bossesDialog = 0
         }
