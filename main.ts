@@ -58,13 +58,17 @@ function startIntro () {
     Hops_and_Paw.setPosition(12, 152)
     Hops_and_Paw.ay = 200
     scene.cameraFollowSprite(Hops_and_Paw)
-    assettable = sprites.create(assets.image`Bosses Table`, SpriteKind.decoration)
-    assettable.setPosition(240, 164)
-    assettable.z = 1
     boss = sprites.create(assets.image`Intro Boss`, SpriteKind.Player)
     boss.setPosition(240, 152)
     boss.ay = 200
     boss.z = 0
+    assettable = sprites.create(assets.image`Bosses Table`, SpriteKind.decoration)
+    assettable.setPosition(240, 164)
+    assettable.z = 2
+    assetportal = sprites.create(assets.image`Level portal`, SpriteKind.decoration)
+    assetportal.setPosition(350, 152)
+    assetportal.ay = 200
+    assettable.z = 0
     tiles.setTilemap(tilemap`level5`)
     gameIntro = 1
     bossesDialog = 1
@@ -203,8 +207,9 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
-let boss: Sprite = null
+let assetportal: Sprite = null
 let assettable: Sprite = null
+let boss: Sprite = null
 let gameStart = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
