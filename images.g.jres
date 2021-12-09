@@ -109,6 +109,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Intro Boss 2"
     },
+    "image23": {
+        "data": "hwQXAC4AAAAAAO7u7u7u7u7u7u7u7u7u7u7u7u7u7gAAAO7u7u7u7u7u7u7u7u7u7u7u7u7u7gAAAO7u7u7u7u7u7u7u7u7u7u7u7u7u7gAAAO7+///////////u/v/////////v7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+EREREREREfHu/hERERERERHv7gAAAO7+///////////u/v/////////v7gAAAO7u7u7u7u7u7u7u7u7u7u7u7u7u7gAAAO7u7u7u7u7u7u7+7u7u7u7u7u7u7gAAAO7u7u7u7u7u7u7u7u7u7u7u7u7u7gA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Level portal"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
