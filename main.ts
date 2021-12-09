@@ -49,9 +49,6 @@ function startGame () {
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
     gameStart = 1
 }
-function intro () {
-	
-}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
     Hops_and_Paw.destroy()
     assetportal.destroy()
@@ -410,8 +407,9 @@ forever(function () {
             story.spriteSayText(Hops_and_Paw, "Так, босе!")
             boss.setImage(assets.image`Intro Boss 2`)
             story.spriteSayText(boss, "Вперед, щоб очі мої тебе не бачили.")
-            bossesDialog = 0
             controller.moveSprite(Hops_and_Paw, 100, 0)
+            story.spriteSayText(boss, "І не відволікайся на фігню!")
+            bossesDialog = 0
         }
     }
 })
