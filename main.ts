@@ -393,6 +393,8 @@ forever(function () {
             story.spriteSayText(Hops_and_Paw, "Якої цілі?")
             story.spriteSayText(boss, "Щоб ми стали найкращою компанією у світі! ")
             story.spriteSayText(Hops_and_Paw, "Так, босе!")
+            boss.setImage(assets.image`Intro Boss 2`)
+            story.spriteSayText(boss, "А тепер йди, щоб очі мої тебе не бачили.")
             bossesDialog = 0
         }
     }
