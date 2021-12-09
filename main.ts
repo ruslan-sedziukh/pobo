@@ -28,9 +28,11 @@ function startGame () {
     scene.setBackgroundColor(11)
     effects.starField.startScreenEffect()
     Hops_and_Paw = sprites.create(assets.image`Hero - direct`, SpriteKind.Player)
+    Hops_and_Paw.setPosition(80, 120)
     Hops_and_Paw.z = 2
     controller.moveSprite(Hops_and_Paw, 200, 200)
     Hops_and_Paw.setFlag(SpriteFlag.StayInScreen, true)
+    scene.centerCameraAt(80, 60)
     ammoLeft = 0
     speed = 1
     projectileUpdate = 1000
@@ -39,7 +41,6 @@ function startGame () {
     taskUpdate = randint(3000, 15000)
     gameOn = 1
     speed = 0
-    Hops_and_Paw.y = 120
     info.setLife(5)
     projectileSpeedStep = 25
     projectileUpdateStep = -150
@@ -52,6 +53,10 @@ function intro () {
 	
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
+    Hops_and_Paw.destroy()
+    assetportal.destroy()
+    assettable.destroy()
+    boss.destroy()
     startGame()
 })
 function startIntro () {
@@ -211,9 +216,9 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
-let assetportal: Sprite = null
-let assettable: Sprite = null
 let boss: Sprite = null
+let assettable: Sprite = null
+let assetportal: Sprite = null
 let gameStart = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
@@ -395,6 +400,7 @@ forever(function () {
 forever(function () {
     if (gameIntro) {
         if (boss.x - Hops_and_Paw.x <= 50 && bossesDialog) {
+            controller.moveSprite(Hops_and_Paw, 0, 0)
             story.spriteSayText(Hops_and_Paw, "Йо, бос.")
             story.spriteSayText(boss, "Йо, заходь.")
             story.spriteSayText(boss, "Керівництво постановило стратегічну ціль компанії.")
@@ -405,6 +411,7 @@ forever(function () {
             boss.setImage(assets.image`Intro Boss 2`)
             story.spriteSayText(boss, "Вперед, щоб очі мої тебе не бачили.")
             bossesDialog = 0
+            controller.moveSprite(Hops_and_Paw, 100, 0)
         }
     }
 })
