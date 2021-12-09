@@ -4,6 +4,7 @@ namespace SpriteKind {
     export const Fireball = SpriteKind.create()
     export const Task = SpriteKind.create()
     export const decoration = SpriteKind.create()
+    export const portal = SpriteKind.create()
 }
 function testListSort () {
     list = [
@@ -50,6 +51,9 @@ function startGame () {
 function intro () {
 	
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
+    startGame()
+})
 function startIntro () {
     scene.setBackgroundColor(11)
     Hops_and_Paw = sprites.create(assets.image`Intro Hero`, SpriteKind.Player)
@@ -65,7 +69,7 @@ function startIntro () {
     assettable = sprites.create(assets.image`Bosses Table`, SpriteKind.decoration)
     assettable.setPosition(240, 164)
     assettable.z = 2
-    assetportal = sprites.create(assets.image`Level portal`, SpriteKind.decoration)
+    assetportal = sprites.create(assets.image`Level portal`, SpriteKind.portal)
     assetportal.setPosition(350, 152)
     assetportal.ay = 200
     assettable.z = 0
@@ -399,7 +403,7 @@ forever(function () {
             story.spriteSayText(boss, "Щоб ми стали найкращою компанією у світі! ")
             story.spriteSayText(Hops_and_Paw, "Так, босе!")
             boss.setImage(assets.image`Intro Boss 2`)
-            story.spriteSayText(boss, "А тепер йди, щоб очі мої тебе не бачили.")
+            story.spriteSayText(boss, "Вперед, щоб очі мої тебе не бачили.")
             bossesDialog = 0
         }
     }
