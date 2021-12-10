@@ -114,6 +114,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Level portal"
     },
+    "image24": {
+        "data": "hwQNAAcAAAAAAAADAAAwAwAAMwMAMDMDADMzAzAzMwMzMzMDMDMzAwAzMwMAMDMDAAAzAwAAMAMAAAAD",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "coursore"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

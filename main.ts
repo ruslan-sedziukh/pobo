@@ -408,7 +408,7 @@ forever(function () {
             boss.setImage(assets.image`Intro Boss 2`)
             story.spriteSayText(boss, "Вперед, щоб очі мої тебе не бачили.")
             controller.moveSprite(Hops_and_Paw, 100, 0)
-            story.spriteSayText(boss, "І не відволікайся на фігню!")
+            story.spriteSayText(boss, "І не відволікайся на всяку фігню!")
             bossesDialog = 0
         }
     }

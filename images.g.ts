@@ -590,6 +590,16 @@ eeeeeeeeeeeeeeeeeeeeeee
 eeeeeeeeeeeeeeeeeeeeeee
 eeeeeeeeeeeeeeeeeeeeeee
 `;
+            case "image24":
+            case "coursore":return img`
+. . . . . . 3 . . . . . . 
+. . . . . 3 3 3 . . . . . 
+. . . . 3 3 3 3 3 . . . . 
+. . . 3 3 3 3 3 3 3 . . . 
+. . 3 3 3 3 3 3 3 3 3 . . 
+. 3 3 3 3 3 3 3 3 3 3 3 . 
+3 3 3 3 3 3 3 3 3 3 3 3 3 
+`;
         }
         return null;
     })
