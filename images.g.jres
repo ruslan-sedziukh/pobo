@@ -119,6 +119,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "coursore"
     },
+    "image25": {
+        "data": "hwQIAAgAAAAzMzMzMzMzAzMzMwAzMwMAMzMzADMDMwMzADAzAwAAMw==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "coursore2"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

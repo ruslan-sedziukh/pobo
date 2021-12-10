@@ -600,6 +600,17 @@ eeeeeeeeeeeeeeeeeeeeeee
 . 3 3 3 3 3 3 3 3 3 3 3 . 
 3 3 3 3 3 3 3 3 3 3 3 3 3 
 `;
+            case "image25":
+            case "coursore2":return img`
+3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 . 
+3 3 3 3 3 3 . . 
+3 3 3 3 3 . . . 
+3 3 3 3 3 3 . . 
+3 3 3 . 3 3 3 . 
+3 3 . . . 3 3 3 
+3 . . . . . 3 3 
+`;
         }
         return null;
     })

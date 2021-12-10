@@ -23,6 +23,11 @@ function testListSort () {
     console.log("sorted list")
     console.log(list)
 }
+function startMenu () {
+    scene.setBackgroundColor(11)
+    assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
+    controller.moveSprite(assetcoursor, 100, 100)
+}
 function startGame () {
     gameIntro = 0
     scene.setBackgroundColor(11)
@@ -230,9 +235,10 @@ let speed = 0
 let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
 let gameIntro = 0
+let assetcoursor: Sprite = null
 let list: number[] = []
 start()
-startIntro()
+startMenu()
 game.onUpdate(function () {
     if (gameStart) {
         if (Hops_and_Paw.vx < 0) {
