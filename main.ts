@@ -109,10 +109,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         info.changeLifeBy(-1)
     } else {
         gameOn = 0
+        Hops_and_Paw.destroy(effects.fire, 500)
         game.splash("Здувся!")
         effects.starField.endScreenEffect()
         music.playMelody("C D E F G A B C5 ", 120)
-        Hops_and_Paw.destroy()
         for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
             value.destroy()
         }
@@ -122,6 +122,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         for (let value3 of sprites.allOfKind(SpriteKind.Task)) {
             value3.destroy()
         }
+        gameStart = 0
         startMenu()
     }
 })
