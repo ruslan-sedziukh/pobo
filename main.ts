@@ -5,6 +5,8 @@ namespace SpriteKind {
     export const Task = SpriteKind.create()
     export const decoration = SpriteKind.create()
     export const portal = SpriteKind.create()
+    export const GameButton = SpriteKind.create()
+    export const IntroButton = SpriteKind.create()
 }
 function testListSort () {
     list = [
@@ -26,7 +28,12 @@ function testListSort () {
 function startMenu () {
     scene.setBackgroundColor(11)
     assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
+    assetcoursor.z = 1
     controller.moveSprite(assetcoursor, 100, 100)
+    assetgameButton = sprites.create(assets.image`Game Button 2`, SpriteKind.GameButton)
+    assetgameButton.setPosition(80, 45)
+    assetintroButton = sprites.create(assets.image`Intro Button 2`, SpriteKind.IntroButton)
+    assetintroButton.setPosition(80, 75)
 }
 function startGame () {
     gameIntro = 0
@@ -235,6 +242,8 @@ let speed = 0
 let ammoLeft = 0
 let Hops_and_Paw: Sprite = null
 let gameIntro = 0
+let assetintroButton: Sprite = null
+let assetgameButton: Sprite = null
 let assetcoursor: Sprite = null
 let list: number[] = []
 start()
