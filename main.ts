@@ -429,7 +429,7 @@ forever(function () {
 })
 forever(function () {
     if (gameIntro) {
-        if (boss.x - Hops_and_Paw.x <= 50 && bossesDialog) {
+        if (boss.x - Hops_and_Paw.x <= 35 && bossesDialog) {
             controller.moveSprite(Hops_and_Paw, 0, 0)
             story.spriteSayText(Hops_and_Paw, "Йо, бос.")
             story.spriteSayText(boss, "Йо, заходь.")
