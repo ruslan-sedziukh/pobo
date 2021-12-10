@@ -124,6 +124,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "coursore2"
     },
+    "image26": {
+        "data": "hwQUAAoAAAAREREREQAAAAEAAAAQAAAAARARARAAAAABAAAAEAAAAAEAEQEQAAAAAQAQABAAAAABABEBEAAAAAEAAAAQAAAAAQABABAAAAABABEBEAAAAAEAAQAQAAAAAQAAABAAAAABABEBEAAAAAEAEQAQAAAAAQAAABAAAAABABEBEAAAAAEAAQEQAAAAAQARARAAAAABAAAAEAAAABERERERAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Intro Button"
+    },
+    "image27": {
+        "data": "hwQNAAoAAAAREREREQAAAAEAAAAQAAAAARARARAAAAABEAAAEAAAAAEAEQEQAAAAAQARABAAAAABAAAAEAAAAAEAEQEQAAAAAQABARAAAAABABEBEAAAAAEAAAEQAAAAAQAAABAAAAAREREREQAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Game Button"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
