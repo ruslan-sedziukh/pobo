@@ -25,6 +25,14 @@ function testListSort () {
     console.log("sorted list")
     console.log(list)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.GameButton, function (sprite, otherSprite) {
+    if (controller.A.isPressed()) {
+        assetcoursor.destroy()
+        assetgameButton.destroy()
+        assetintroButton.destroy()
+        startGame()
+    }
+})
 function startMenu () {
     scene.setBackgroundColor(11)
     assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
@@ -217,6 +225,14 @@ function getList () {
         }
     }
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.IntroButton, function (sprite, otherSprite) {
+    if (controller.A.isPressed()) {
+        assetcoursor.destroy()
+        assetgameButton.destroy()
+        assetintroButton.destroy()
+        startIntro()
+    }
+})
 let value4: Sprite = null
 let n = 0
 let i = 0
