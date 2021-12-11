@@ -71,7 +71,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
 })
 function takeABonus () {
     gameOn = 0
-    mySprite = sprites.create(img`
+    assetphone_call = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -88,7 +88,7 @@ function takeABonus () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.decoration)
     gameOn = 1
 }
 function startIntro () {
@@ -122,9 +122,6 @@ function speed_up () {
     game.splash("Дедлайн наближається.")
     game.splash("Збільшити швидкість!")
     gameOn = 1
-}
-function testDialogs () {
-	
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     if (info.life() > 1) {
@@ -273,7 +270,7 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
-let mySprite: Sprite = null
+let assetphone_call: Sprite = null
 let boss: Sprite = null
 let assettable: Sprite = null
 let assetportal: Sprite = null
