@@ -7,6 +7,7 @@ namespace SpriteKind {
     export const portal = SpriteKind.create()
     export const GameButton = SpriteKind.create()
     export const IntroButton = SpriteKind.create()
+    export const Button = SpriteKind.create()
 }
 function testListSort () {
     list = [
@@ -25,22 +26,14 @@ function testListSort () {
     console.log("sorted list")
     console.log(list)
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.GameButton, function (sprite, otherSprite) {
-    if (controller.A.isPressed()) {
-        assetcoursor.destroy()
-        assetgameButton.destroy()
-        assetintroButton.destroy()
-        startGame()
-    }
-})
 function startMenu () {
     scene.setBackgroundColor(11)
     assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
     assetcoursor.z = 1
     controller.moveSprite(assetcoursor, 100, 100)
-    assetgameButton = sprites.create(assets.image`Game Button 2`, SpriteKind.GameButton)
+    assetgameButton = sprites.create(assets.image`Game Button 2`, SpriteKind.Button)
     assetgameButton.setPosition(80, 45)
-    assetintroButton = sprites.create(assets.image`Intro Button 2`, SpriteKind.IntroButton)
+    assetintroButton = sprites.create(assets.image`Intro Button 2`, SpriteKind.Button)
     assetintroButton.setPosition(80, 75)
 }
 function startGame () {
@@ -150,6 +143,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     music.jumpUp.play()
     info.changeLifeBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherSprite) {
+    if (otherSprite == assetgameButton && controller.A.isPressed()) {
+        assetcoursor.destroy()
+        assetgameButton.destroy()
+        assetintroButton.destroy()
+        startGame()
+    }
+    if (otherSprite == assetintroButton && controller.A.isPressed()) {
+        assetcoursor.destroy()
+        assetgameButton.destroy()
+        assetintroButton.destroy()
+        startIntro()
+    }
+})
 function sortList () {
     if (list.length > 1) {
         for (let index2 = 0; index2 <= list.length - 1; index2++) {
@@ -227,14 +234,6 @@ function getList () {
         }
     }
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.IntroButton, function (sprite, otherSprite) {
-    if (controller.A.isPressed()) {
-        assetcoursor.destroy()
-        assetgameButton.destroy()
-        assetintroButton.destroy()
-        startIntro()
-    }
-})
 let value4: Sprite = null
 let n = 0
 let i = 0
