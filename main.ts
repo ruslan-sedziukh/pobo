@@ -71,24 +71,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
 })
 function takeABonus () {
     gameOn = 0
-    assetphone_call = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.decoration)
+    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+    assetphone_call.setPosition(80, 60)
+    story.spriteSayText(assetphone_call, "Ну здарова, отєц.")
     gameOn = 1
 }
 function startIntro () {
