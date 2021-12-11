@@ -69,6 +69,28 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
     boss.destroy()
     startGame()
 })
+function takeABonus () {
+    gameOn = 0
+    mySprite = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    gameOn = 1
+}
 function startIntro () {
     scene.setBackgroundColor(11)
     Hops_and_Paw = sprites.create(assets.image`Intro Hero`, SpriteKind.Player)
@@ -91,6 +113,15 @@ function startIntro () {
     tiles.setTilemap(tilemap`level5`)
     gameIntro = 1
     bossesDialog = 1
+}
+function speed_up () {
+    projectileSpeed += projectileSpeedStep
+    projectileUpdate += projectileUpdateStep
+    speed += 1
+    gameOn = 0
+    game.splash("Дедлайн наближається.")
+    game.splash("Збільшити швидкість!")
+    gameOn = 1
 }
 function testDialogs () {
 	
@@ -242,6 +273,7 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
+let mySprite: Sprite = null
 let boss: Sprite = null
 let assettable: Sprite = null
 let assetportal: Sprite = null
@@ -278,47 +310,18 @@ game.onUpdate(function () {
             gameOn = 0
         }
         if (info.score() == 5 && speed == 0) {
-            projectileSpeed += projectileSpeedStep
-            projectileUpdate += projectileUpdateStep
-            speed += 1
-            gameOn = 0
-            game.splash("Дедлайн наближається.")
-            game.splash("Збільшити швидкість!")
-            gameOn = 1
+            speed_up()
         } else if (info.score() == 10 && speed == 1) {
-            projectileSpeed += projectileSpeedStep
-            projectileUpdate += projectileUpdateStep
-            speed += 1
-            gameOn = 0
-            game.splash("Дедлайн наближається.")
-            game.splash("Збільшити швидкість!")
-            gameOn = 1
+            speed_up()
         } else if (info.score() == 15 && speed == 2) {
-            projectileSpeed += projectileSpeedStep
-            projectileUpdate += projectileUpdateStep
-            speed += 1
-            gameOn = 0
-            game.splash("Дедлайн наближається.")
-            game.splash("Збільшити швидкість!")
-            gameOn = 1
+            speed_up()
         } else if (info.score() == 20 && speed == 3) {
-            projectileSpeed += projectileSpeedStep
-            projectileUpdate += projectileUpdateStep
-            speed += 1
-            gameOn = 0
-            game.splash("Дедлайн наближається.")
-            game.splash("Збільшити швидкість!")
-            gameOn = 1
+            speed_up()
         } else if (info.score() == 25 && speed == 4) {
-            projectileSpeed += projectileSpeedStep
-            projectileUpdate += projectileUpdateStep
-            speed += 1
-            gameOn = 0
-            game.splash("Дедлайн наближається.")
-            game.splash("Збільшити швидкість!")
-            gameOn = 1
-        } else {
-        	
+            speed_up()
+        }
+        if (info.score() == 1 && speed == 0) {
+            takeABonus()
         }
     }
 })
