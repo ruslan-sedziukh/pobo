@@ -116,6 +116,7 @@ function startIntro () {
 function speed_up () {
     projectileSpeed += projectileSpeedStep
     projectileUpdate += projectileUpdateStep
+    updateSpeed()
     speed += 1
     gameOn = 0
     game.splash("Дедлайн наближається.")
@@ -146,6 +147,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         startMenu()
     }
 })
+function updateSpeed () {
+    for (let value of sprites.allOfKind(SpriteKind.Task)) {
+        value.setVelocity(0, projectileSpeed)
+    }
+    for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
+        value.setVelocity(0, projectileSpeed)
+    }
+    for (let value of sprites.allOfKind(SpriteKind.Food)) {
+        value.setVelocity(0, projectileSpeed)
+    }
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     music.baDing.play()
@@ -398,8 +410,7 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 1 && speed == 0) {
-            takeABonus()
+        if (info.score() == 5 && speed == 0) {
             speed_up()
         } else if (info.score() == 10 && speed == 1) {
             speed_up()
