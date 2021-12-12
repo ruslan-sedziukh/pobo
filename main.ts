@@ -257,20 +257,35 @@ function getX () {
             position = randint(list[0] + 12, 154)
         }
     } else if (list.length == 2) {
-        if (list[0] - 12 <= 6 && list[0] + 12 >= 154) {
+        if (list[0] - 12 <= 6 && list[1] + 12 >= 154) {
             n = 2
-        } else if (list[0] - 12 <= 6 && list[0] + 12 < 154) {
-            n = randint(2, 3)
-        } else if (list[0] - 12 > 6 && list[0] + 12 >= 154) {
-            n = randint(1, 2)
-        } else if (list[0] - 12 > 6 && list[0] + 12 < 154) {
-            n = randint(1, 3)
+        } else if (list[0] - 12 <= 6 && list[1] + 12 < 154) {
+            if (list[1] - list[0] >= 25) {
+                n = randint(2, 3)
+            } else {
+                n = 3
+            }
+        } else if (list[0] - 12 > 6 && list[1] + 12 >= 154) {
+            if (list[1] - list[0] >= 25) {
+                n = randint(1, 2)
+            } else {
+                n = 1
+            }
+        } else if (list[0] - 12 > 6 && list[1] + 12 < 154) {
+            if (list[1] - list[0] >= 25) {
+                n = randint(1, 3)
+            } else {
+                n = randint(1, 2)
+                if (n == 2) {
+                    n = 3
+                }
+            }
         }
         if (n == 1) {
             position = randint(6, list[0] - 12)
         } else if (n == 2) {
             position = randint(list[0] + 12, list[1] - 12)
-        } else {
+        } else if (n == 3) {
             position = randint(list[1] + 12, 154)
         }
     } else {
