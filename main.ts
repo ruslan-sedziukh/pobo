@@ -116,7 +116,7 @@ function startIntro () {
 }
 function speed_up () {
     projectileSpeed += projectileSpeedStep
-    projectileUpdate += projectileUpdateStep
+    projectileUpdate = 50000 / projectileSpeed
     updateSpeed()
     speed += 1
     gameOn = 0
@@ -427,15 +427,14 @@ forever(function () {
             gameOn = 0
         }
         if (info.score() == 1 && speed == 0) {
-            takeABonus()
             speed_up()
-        } else if (info.score() == 10 && speed == 1) {
+        } else if (info.score() == 2 && speed == 1) {
             speed_up()
-        } else if (info.score() == 15 && speed == 2) {
+        } else if (info.score() == 3 && speed == 2) {
             speed_up()
-        } else if (info.score() == 20 && speed == 3) {
+        } else if (info.score() == 4 && speed == 3) {
             speed_up()
-        } else if (info.score() == 25 && speed == 4) {
+        } else if (info.score() == 5 && speed == 4) {
             speed_up()
         }
     }
