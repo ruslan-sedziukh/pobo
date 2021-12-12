@@ -36,6 +36,18 @@ function startMenu () {
     assetintroButton = sprites.create(assets.image`Intro Button 2`, SpriteKind.Button)
     assetintroButton.setPosition(80, 75)
 }
+function stopMove () {
+    controller.moveSprite(Hops_and_Paw, 0, 0)
+    for (let value of sprites.allOfKind(SpriteKind.Task)) {
+        value.setVelocity(0, 0)
+    }
+    for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
+        value.setVelocity(0, 0)
+    }
+    for (let value of sprites.allOfKind(SpriteKind.Food)) {
+        value.setVelocity(0, 0)
+    }
+}
 function startGame () {
     gameIntro = 0
     scene.setBackgroundColor(11)
@@ -70,11 +82,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
     startGame()
 })
 function takeABonus () {
+    stopMove()
     gameOn = 0
     assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.Player)
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Ну здарова, отєц.")
     gameOn = 1
+    letsMove()
 }
 function startIntro () {
     scene.setBackgroundColor(11)
@@ -150,6 +164,18 @@ function picPosition () {
     getX()
     console.log("postition")
     console.log(position)
+}
+function letsMove () {
+    controller.moveSprite(Hops_and_Paw, 200, 200)
+    for (let value of sprites.allOfKind(SpriteKind.Task)) {
+        value.setVelocity(0, projectileSpeed)
+    }
+    for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
+        value.setVelocity(0, projectileSpeed)
+    }
+    for (let value of sprites.allOfKind(SpriteKind.Food)) {
+        value.setVelocity(0, projectileSpeed)
+    }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -271,8 +297,8 @@ let projectileSpeed = 0
 let projectileUpdate = 0
 let speed = 0
 let ammoLeft = 0
-let Hops_and_Paw: Sprite = null
 let gameIntro = 0
+let Hops_and_Paw: Sprite = null
 let assetintroButton: Sprite = null
 let assetgameButton: Sprite = null
 let assetcoursor: Sprite = null
@@ -368,6 +394,25 @@ forever(function () {
     }
 })
 forever(function () {
+    if (gameStart) {
+        if (info.life() == 0) {
+            gameOn = 0
+        }
+        if (info.score() == 1 && speed == 0) {
+            takeABonus()
+            speed_up()
+        } else if (info.score() == 10 && speed == 1) {
+            speed_up()
+        } else if (info.score() == 15 && speed == 2) {
+            speed_up()
+        } else if (info.score() == 20 && speed == 3) {
+            speed_up()
+        } else if (info.score() == 25 && speed == 4) {
+            speed_up()
+        }
+    }
+})
+forever(function () {
     while (gameOn) {
         if (gameTime < 5000) {
             pause(taskUpdate)
@@ -391,25 +436,6 @@ forever(function () {
             objectGeneratingIndex[2][1] = game.runtime()
             taskUpdate = randint(3000, 10000)
             pause(taskUpdate)
-        }
-    }
-})
-forever(function () {
-    if (gameStart) {
-        if (info.life() == 0) {
-            gameOn = 0
-        }
-        if (info.score() == 1 && speed == 0) {
-            takeABonus()
-            speed_up()
-        } else if (info.score() == 10 && speed == 1) {
-            speed_up()
-        } else if (info.score() == 15 && speed == 2) {
-            speed_up()
-        } else if (info.score() == 20 && speed == 3) {
-            speed_up()
-        } else if (info.score() == 25 && speed == 4) {
-            speed_up()
         }
     }
 })
