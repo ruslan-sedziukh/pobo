@@ -87,6 +87,7 @@ function takeABonus () {
     assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.Player)
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Ну здарова, отєц.")
+    assetphone_call.destroy()
     gameOn = 1
     letsMove()
 }
@@ -410,7 +411,8 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 5 && speed == 0) {
+        if (info.score() == 1 && speed == 0) {
+            takeABonus()
             speed_up()
         } else if (info.score() == 10 && speed == 1) {
             speed_up()
