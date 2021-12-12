@@ -288,23 +288,6 @@ game.onUpdate(function () {
         } else {
             Hops_and_Paw.setImage(assets.image`Hero - direct`)
         }
-        if (info.life() == 0) {
-            gameOn = 0
-        }
-        if (info.score() == 5 && speed == 0) {
-            speed_up()
-        } else if (info.score() == 10 && speed == 1) {
-            speed_up()
-        } else if (info.score() == 15 && speed == 2) {
-            speed_up()
-        } else if (info.score() == 20 && speed == 3) {
-            speed_up()
-        } else if (info.score() == 25 && speed == 4) {
-            speed_up()
-        }
-        if (info.score() == 1 && speed == 0) {
-            takeABonus()
-        }
     }
 })
 forever(function () {
@@ -408,6 +391,25 @@ forever(function () {
             objectGeneratingIndex[2][1] = game.runtime()
             taskUpdate = randint(3000, 10000)
             pause(taskUpdate)
+        }
+    }
+})
+forever(function () {
+    if (gameStart) {
+        if (info.life() == 0) {
+            gameOn = 0
+        }
+        if (info.score() == 1 && speed == 0) {
+            takeABonus()
+            speed_up()
+        } else if (info.score() == 10 && speed == 1) {
+            speed_up()
+        } else if (info.score() == 15 && speed == 2) {
+            speed_up()
+        } else if (info.score() == 20 && speed == 3) {
+            speed_up()
+        } else if (info.score() == 25 && speed == 4) {
+            speed_up()
         }
     }
 })
