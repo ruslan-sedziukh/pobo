@@ -84,9 +84,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
 function takeABonus () {
     stopMove()
     gameOn = 0
-    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.Player)
+    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+    assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
-    story.spriteSayText(assetphone_call, "Ну здарова, отєц.")
+    story.spriteSayText(assetphone_call, "Привіт. ")
+    story.spriteSayText(assetphone_call, "Керівництво задоволене твоїми результатами.")
+    story.spriteSayText(assetphone_call, "Продовжуй у тому ж дусі і твої старання будуть винагородженні!")
     assetphone_call.destroy()
     gameOn = 1
     letsMove()
@@ -426,8 +429,9 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 5 && speed == 0) {
+        if (info.score() == 1 && speed == 0) {
             speed_up()
+            takeABonus()
         } else if (info.score() == 10 && speed == 1) {
             speed_up()
         } else if (info.score() == 15 && speed == 2) {
