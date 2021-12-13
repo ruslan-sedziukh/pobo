@@ -429,9 +429,8 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 1 && speed == 0) {
+        if (info.score() == 5 && speed == 0) {
             speed_up()
-            takeABonus()
         } else if (info.score() == 10 && speed == 1) {
             speed_up()
         } else if (info.score() == 15 && speed == 2) {
@@ -440,6 +439,7 @@ forever(function () {
             speed_up()
         } else if (info.score() == 25 && speed == 4) {
             speed_up()
+            takeABonus()
         }
     }
 })
