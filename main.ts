@@ -149,6 +149,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         }
         gameStart = 0
         startMenu()
+        info.setScore(0)
     }
 })
 function updateSpeed () {
