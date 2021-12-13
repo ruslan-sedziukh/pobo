@@ -138,18 +138,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         effects.starField.endScreenEffect()
         music.playMelody("C D E F G A B C5 ", 120)
         game.splash("Здувся!")
-        for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
-            value.destroy()
-        }
-        for (let value2 of sprites.allOfKind(SpriteKind.Food)) {
-            value2.destroy()
-        }
-        for (let value3 of sprites.allOfKind(SpriteKind.Task)) {
-            value3.destroy()
-        }
-        gameStart = 0
-        startMenu()
-        info.setScore(0)
+        game.reset()
     }
 })
 function updateSpeed () {
