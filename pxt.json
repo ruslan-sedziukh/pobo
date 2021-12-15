@@ -1,6 +1,6 @@
 {
     "name": "PB 0-21",
-    "version": "0.9.3",
+    "version": "0.9.2",
     "description": "",
     "dependencies": {
         "device": "*",
@@ -14,8 +14,7 @@
         "tilemap.g.jres",
         "tilemap.g.ts",
         "images.g.jres",
-        "images.g.ts",
-        null
+        "images.g.ts"
     ],
     "testFiles": [
         "test.ts"
