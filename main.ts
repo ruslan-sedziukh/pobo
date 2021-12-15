@@ -29,8 +29,9 @@ function testListSort () {
 function startMenu () {
     scene.setBackgroundColor(11)
     assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
+    assetcoursor.setStayInScreen(true)
     assetcoursor.z = 1
-    controller.moveSprite(assetcoursor, 100, 100)
+    controller.moveSprite(assetcoursor, 150, 150)
     assetgameButton = sprites.create(assets.image`Game Button 2`, SpriteKind.Button)
     assetgameButton.setPosition(80, 45)
     assetintroButton = sprites.create(assets.image`Intro Button 2`, SpriteKind.Button)
