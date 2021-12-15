@@ -154,6 +154,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "myImage0"
     },
+    "image32": {
+        "data": "hwQUABkAAAAAAPD/////AAAAAAAAAAAAAADwqqqqqv//AAAAAAAAAADw/6qqqqqqqv//AAAAAADw//yqqqqqqqqqqv8PAAAA//z8qqqqMzOjqqqqDwAAAM/8/KqqOlVVNaqqqg8AAADP/PyqqlNlU1WjqqoPAAAAz/z8qjpVNTpVNaqqDwAAAM/8/Ko6VaOqMzWqqg8AAADP/PyqOlWjqlM1qqoPAAAAz/z8qjpdo6pTNaqqDwAAAM/8/Ko6VaOqkzWqqg8AAADP/PyqOqU1OlU1qqoPAAAAz/z8qqpTVVNVo6qqDwAAAM/8/KqqOlVSNaqqqg8AAAD//PyqqqozM6OqqqoPAAAA8P/8qqqqqqqqqqr/DwAAAADw/6qqqqqqqv//AAAAAAAAAPCqqqqq//8AAAAAAAAAAADw/////wAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "The Cup"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

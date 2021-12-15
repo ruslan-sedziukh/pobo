@@ -745,6 +745,34 @@ f3333333fff3333333f
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
+            case "image32":
+            case "The Cup":return img`
+....ffffffffffff....
+...ffccccccccccff...
+...fccccccccccccf...
+..ffffffffffffffff..
+..fccccccccccccccf..
+ffffffffffffffffffff
+faaaaaaaaaaaaaaaaaaf
+faaaaaaaaaaaaaaaaaaf
+faaaaaaaaaaaaaaaaaaf
+faaaaaa333333aaaaaaf
+faaaaa3555d553aaaaaf
+faaaa3555555a53aaaaf
+faaa355533335553aaaf
+faaa3563aaaa3553aaaf
+.faa353aaaaaa323aaf.
+.faa3553aaaa3553aaf.
+.faa355533335553aaf.
+.faaa3553559553aaaf.
+..faaa35555553aaaf..
+..faaaa333333aaaaf..
+..faaaaaaaaaaaaaaf..
+..faaaaaaaaaaaaaaf..
+...faaaaaaaaaaaaf...
+...faaaaaaaaaaaaf...
+...ffffffffffffff...
+`;
         }
         return null;
     })
