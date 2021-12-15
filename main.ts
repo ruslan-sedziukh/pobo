@@ -470,11 +470,11 @@ forever(function () {
             story.spriteSayText(boss, "Твоє завдання - досягнути цієї цілі!")
             story.spriteSayText(Hops_and_Paw, "Якої цілі?")
             story.spriteSayText(boss, "Щоб ми стали найкращою компанією у світі! ")
-            story.spriteSayText(Hops_and_Paw, "Так, босе!")
+            story.spriteSayText(Hops_and_Paw, "Так, бос!")
             boss.setImage(assets.image`Intro Boss 2`)
-            story.spriteSayText(boss, "Вперед, щоб очі мої тебе не бачили.")
-            controller.moveSprite(Hops_and_Paw, 100, 0)
+            story.spriteSayText(boss, "Вперед.")
             story.spriteSayText(boss, "І не відволікайся на всяку фігню!")
+            controller.moveSprite(Hops_and_Paw, 100, 0)
             bossesDialog = 0
         }
     }
