@@ -474,7 +474,7 @@ forever(function () {
             story.spriteSayText(Hops_and_Paw, "Так, бос!")
             story.spriteSayText(boss, "Компанія на тебе покладається.")
             boss.setImage(assets.image`Intro Boss 2`)
-            story.spriteSayText(boss, "До роботи. І не відволікайся на всяку фігню!")
+            story.spriteSayText(boss, "Вперед. І не відволікайся на всяку фігню!")
             controller.moveSprite(Hops_and_Paw, 100, 0)
             bossesDialog = 0
         }
