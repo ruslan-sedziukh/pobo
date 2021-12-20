@@ -87,7 +87,6 @@ function startGame () {
     music.setVolume(20)
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
     gameStart = 1
-    takeABonus2()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
     Hops_and_Paw.destroy()
@@ -103,10 +102,12 @@ function takeABonus2 () {
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Дзень-дзень")
+    story.spriteSayText(assetphone_call, "Ти робиш успіхи. Ми бачимо прогрес. ")
     story.spriteSayText(assetphone_call, "Компанія оцінила твої старання.")
     story.spriteSayText(assetphone_call, "Ти заслужив бонус! ")
     story.spriteSayText(assetphone_call, "І твій бонус, це...")
     assetphone_call.destroy()
+    effects.confetti.startScreenEffect()
     assetbonus = sprites.create(assets.image`The Cup L1`, SpriteKind.decoration)
     assetbonus.z = 3
     assetbonus.setPosition(80, 60)
@@ -160,8 +161,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         Hops_and_Paw.destroy(effects.fire, 500)
         effects.starField.endScreenEffect()
         music.playMelody("C D E F G A B C5 ", 120)
-        game.splash("Здувся!")
-        game.reset()
+        game.over(false, effects.confetti)
     }
 })
 function updateSpeed () {
@@ -228,6 +228,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherS
         assetcoursor.destroy()
         assetbonus.destroy()
         assetokButton.destroy()
+        effects.confetti.endScreenEffect()
         gameOn = 1
         letsMove()
     }
@@ -462,6 +463,11 @@ forever(function () {
         } else if (info.score() == 25 && speed == 4) {
             speed_up()
             takeABonus1()
+        } else if (info.score() == 50 && speed == 5) {
+            takeABonus2()
+            speed += 1
+        } else if (info.score() == 100 && speed == 6) {
+            speed += 1
         }
     }
 })
