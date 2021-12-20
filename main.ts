@@ -87,6 +87,7 @@ function startGame () {
     music.setVolume(20)
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
     take_a_bonus_2_scene_2 = 0
+    take_a_bonus_3_scene_2 = 0
     gameStart = 1
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
@@ -175,6 +176,28 @@ function updateSpeed () {
         value.setVelocity(0, projectileSpeed)
     }
 }
+function takeABonus3 () {
+    stopMove()
+    gameOn = 0
+    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+    assetphone_call.z = 3
+    assetphone_call.setPosition(80, 60)
+    story.spriteSayText(assetphone_call, "Дзень-дзень")
+    story.spriteSayText(assetphone_call, "Ти робиш успіхи.")
+    story.spriteSayText(assetphone_call, "Компанія не залишає таке без уваги і гідно винагорожує.")
+    story.spriteSayText(assetphone_call, "Прийми це. Ти заслужив!")
+    assetphone_call.destroy()
+    effects.hearts.startScreenEffect()
+    assetbonus = sprites.create(assets.image`THE BONUS`, SpriteKind.decoration)
+    assetbonus.z = 3
+    assetbonus.setPosition(80, 60)
+    assetokButton2 = sprites.create(assets.image`Ok button`, SpriteKind.Button)
+    assetokButton2.z = 4
+    assetokButton2.setPosition(80, 91)
+    assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
+    assetcoursor.z = 5
+    controller.moveSprite(assetcoursor, 150, 150)
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Task, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     music.baDing.play()
@@ -230,6 +253,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherS
         assetokButton.destroy()
         effects.confetti.endScreenEffect()
         take_a_bonus_2_scene_2 = 1
+    }
+    if (otherSprite == assetokButton2 && controller.A.isPressed()) {
+        assetcoursor.destroy()
+        assetbonus.destroy()
+        assetokButton2.destroy()
+        effects.hearts.endScreenEffect()
+        take_a_bonus_3_scene_2 = 1
     }
 })
 function sortList () {
@@ -331,6 +361,7 @@ let bigOne = 0
 let smallOne = 0
 let position = 0
 let timeToMove = 0
+let assetokButton2: Sprite = null
 let bossesDialog = 0
 let assetokButton: Sprite = null
 let assetbonus: Sprite = null
@@ -338,6 +369,7 @@ let boss: Sprite = null
 let assettable: Sprite = null
 let assetportal: Sprite = null
 let gameStart = 0
+let take_a_bonus_3_scene_2 = 0
 let take_a_bonus_2_scene_2 = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
@@ -466,7 +498,8 @@ forever(function () {
         } else if (info.score() == 50 && speed == 5) {
             takeABonus2()
             speed += 1
-        } else if (info.score() == 100 && speed == 6) {
+        } else if (info.score() == 1 && speed == 0) {
+            takeABonus3()
             speed += 1
         }
     }
@@ -509,6 +542,18 @@ forever(function () {
         assetphone_call.destroy()
         gameOn = 1
         take_a_bonus_2_scene_2 = 0
+        letsMove()
+    }
+    if (take_a_bonus_3_scene_2) {
+        assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+        assetphone_call.z = 3
+        assetphone_call.setPosition(80, 60)
+        story.spriteSayText(assetphone_call, "Так тримати!")
+        story.spriteSayText(assetphone_call, "Попереду ще багато роботи.")
+        story.spriteSayText(assetphone_call, "І головний бонус ;)")
+        assetphone_call.destroy()
+        gameOn = 1
+        take_a_bonus_3_scene_2 = 0
         letsMove()
     }
 })
