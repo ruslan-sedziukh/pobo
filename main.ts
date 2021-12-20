@@ -98,7 +98,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
 function takeABonus2 () {
     stopMove()
     gameOn = 0
-    assetbonusCup = sprites.create(assets.image`The Cup`, SpriteKind.decoration)
+    assetbonusCup = sprites.create(assets.image`The Cup L`, SpriteKind.decoration)
     assetbonusCup.z = 3
     assetbonusCup.setPosition(80, 60)
     story.spriteSayText(assetbonusCup, "Привіт. ")
