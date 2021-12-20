@@ -80,7 +80,7 @@ function startGame () {
     taskUpdate = randint(3000, 15000)
     gameOn = 1
     speed = 0
-    info.setLife(999)
+    info.setLife(5)
     projectileSpeedStep = 25
     projectileUpdateStep = -150
     gameTime = 0
@@ -183,7 +183,7 @@ function takeABonus3 () {
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Дзень-дзень")
-    story.spriteSayText(assetphone_call, "Неймовірний результат! ")
+    story.spriteSayText(assetphone_call, "Неймовірно!")
     story.spriteSayText(assetphone_call, "Ніколи не бачили нічого вражаючішого!")
     story.spriteSayText(assetphone_call, "Ти заслужив головний бонус!")
     assetphone_call.destroy()
