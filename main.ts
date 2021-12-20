@@ -183,9 +183,9 @@ function takeABonus3 () {
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Дзень-дзень")
-    story.spriteSayText(assetphone_call, "Ти робиш успіхи.")
-    story.spriteSayText(assetphone_call, "Компанія не залишає таке без уваги і гідно винагорожує.")
-    story.spriteSayText(assetphone_call, "Прийми це. Ти заслужив!")
+    story.spriteSayText(assetphone_call, "Неймовірний результат! ")
+    story.spriteSayText(assetphone_call, "Ніколи не бачили нічого вражаючішого!")
+    story.spriteSayText(assetphone_call, "Ти заслужив головний бонус!")
     assetphone_call.destroy()
     effects.hearts.startScreenEffect()
     assetbonus = sprites.create(assets.image`THE BONUS`, SpriteKind.decoration)
@@ -548,9 +548,9 @@ forever(function () {
         assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
         assetphone_call.z = 3
         assetphone_call.setPosition(80, 60)
-        story.spriteSayText(assetphone_call, "Так тримати!")
-        story.spriteSayText(assetphone_call, "Попереду ще багато роботи.")
-        story.spriteSayText(assetphone_call, "І головний бонус ;)")
+        story.spriteSayText(assetphone_call, "Не зупиняйся на досягнутому. ")
+        story.spriteSayText(assetphone_call, "Ми ще не найкраща компанія у світі.")
+        story.spriteSayText(assetphone_call, "Отже у тебе ще купа роботи!")
         assetphone_call.destroy()
         gameOn = 1
         take_a_bonus_3_scene_2 = 0
