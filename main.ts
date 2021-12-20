@@ -98,15 +98,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
 function takeABonus2 () {
     stopMove()
     gameOn = 0
+    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+    assetphone_call.z = 3
+    assetphone_call.setPosition(80, 60)
+    story.spriteSayText(assetphone_call, "Дзень-дзень")
+    story.spriteSayText(assetphone_call, "Ти заслужив бонус! ")
+    assetphone_call.destroy()
     assetbonusCup = sprites.create(assets.image`The Cup L`, SpriteKind.decoration)
     assetbonusCup.z = 3
     assetbonusCup.setPosition(80, 60)
-    story.spriteSayText(assetbonusCup, "Привіт. ")
-    story.spriteSayText(assetbonusCup, "Керівництво задоволене твоїми результатами.")
-    story.spriteSayText(assetbonusCup, "Продовжуй у тому ж дусі і твої старання будуть винагородженні!")
-    assetbonusCup.destroy()
-    gameOn = 1
-    letsMove()
 }
 function startIntro () {
     scene.setBackgroundColor(11)
