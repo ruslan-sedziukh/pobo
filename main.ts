@@ -32,7 +32,7 @@ function takeABonus1 () {
     assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
-    story.spriteSayText(assetphone_call, "Привіт. ")
+    story.spriteSayText(assetphone_call, "Дзень-дзень")
     story.spriteSayText(assetphone_call, "Керівництво задоволене твоїми результатами.")
     story.spriteSayText(assetphone_call, "Продовжуй у тому ж дусі і твої старання будуть винагородженні!")
     assetphone_call.destroy()
@@ -102,11 +102,13 @@ function takeABonus2 () {
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Дзень-дзень")
+    story.spriteSayText(assetphone_call, "Компанія оцінила твої старання.")
     story.spriteSayText(assetphone_call, "Ти заслужив бонус! ")
+    story.spriteSayText(assetphone_call, "І твій бонус, це...")
     assetphone_call.destroy()
-    assetbonusCup = sprites.create(assets.image`The Cup L`, SpriteKind.decoration)
-    assetbonusCup.z = 3
-    assetbonusCup.setPosition(80, 60)
+    assetbonus = sprites.create(assets.image`Ok button`, SpriteKind.decoration)
+    assetbonus.z = 3
+    assetbonus.setPosition(80, 60)
 }
 function startIntro () {
     scene.setBackgroundColor(11)
@@ -316,7 +318,7 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
-let assetbonusCup: Sprite = null
+let assetbonus: Sprite = null
 let boss: Sprite = null
 let assettable: Sprite = null
 let assetportal: Sprite = null
