@@ -26,6 +26,19 @@ function testListSort () {
     console.log("sorted list")
     console.log(list)
 }
+function takeABonus1 () {
+    stopMove()
+    gameOn = 0
+    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+    assetphone_call.z = 3
+    assetphone_call.setPosition(80, 60)
+    story.spriteSayText(assetphone_call, "Привіт. ")
+    story.spriteSayText(assetphone_call, "Керівництво задоволене твоїми результатами.")
+    story.spriteSayText(assetphone_call, "Продовжуй у тому ж дусі і твої старання будуть винагородженні!")
+    assetphone_call.destroy()
+    gameOn = 1
+    letsMove()
+}
 function startMenu () {
     scene.setBackgroundColor(11)
     assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
@@ -82,16 +95,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherS
     boss.destroy()
     startGame()
 })
-function takeABonus () {
+function takeABonus2 () {
     stopMove()
     gameOn = 0
-    assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
-    assetphone_call.z = 3
-    assetphone_call.setPosition(80, 60)
-    story.spriteSayText(assetphone_call, "Привіт. ")
-    story.spriteSayText(assetphone_call, "Керівництво задоволене твоїми результатами.")
-    story.spriteSayText(assetphone_call, "Продовжуй у тому ж дусі і твої старання будуть винагородженні!")
-    assetphone_call.destroy()
+    assetbonusCup = sprites.create(assets.image`The Cup`, SpriteKind.decoration)
+    assetbonusCup.z = 3
+    assetbonusCup.setPosition(80, 60)
+    story.spriteSayText(assetbonusCup, "Привіт. ")
+    story.spriteSayText(assetbonusCup, "Керівництво задоволене твоїми результатами.")
+    story.spriteSayText(assetbonusCup, "Продовжуй у тому ж дусі і твої старання будуть винагородженні!")
+    assetbonusCup.destroy()
     gameOn = 1
     letsMove()
 }
@@ -303,7 +316,7 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
-let assetphone_call: Sprite = null
+let assetbonusCup: Sprite = null
 let boss: Sprite = null
 let assettable: Sprite = null
 let assetportal: Sprite = null
@@ -312,7 +325,6 @@ let objectGeneratingIndex: number[][] = []
 let gameTime = 0
 let projectileUpdateStep = 0
 let projectileSpeedStep = 0
-let gameOn = 0
 let taskUpdate = 0
 let donutsUpdate = 0
 let projectileSpeed = 0
@@ -324,6 +336,8 @@ let Hops_and_Paw: Sprite = null
 let assetintroButton: Sprite = null
 let assetgameButton: Sprite = null
 let assetcoursor: Sprite = null
+let assetphone_call: Sprite = null
+let gameOn = 0
 let list: number[] = []
 start()
 startMenu()
@@ -420,8 +434,9 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 5 && speed == 0) {
+        if (info.score() == 1 && speed == 0) {
             speed_up()
+            takeABonus2()
         } else if (info.score() == 10 && speed == 1) {
             speed_up()
         } else if (info.score() == 15 && speed == 2) {
@@ -430,7 +445,7 @@ forever(function () {
             speed_up()
         } else if (info.score() == 25 && speed == 4) {
             speed_up()
-            takeABonus()
+            takeABonus1()
         }
     }
 })
