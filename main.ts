@@ -87,6 +87,7 @@ function startGame () {
     music.setVolume(20)
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
     gameStart = 1
+    takeABonus2()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
     Hops_and_Paw.destroy()
@@ -106,9 +107,13 @@ function takeABonus2 () {
     story.spriteSayText(assetphone_call, "Ти заслужив бонус! ")
     story.spriteSayText(assetphone_call, "І твій бонус, це...")
     assetphone_call.destroy()
-    assetbonus = sprites.create(assets.image`Ok button`, SpriteKind.decoration)
+    assetbonus = sprites.create(assets.image`The Cup L1`, SpriteKind.decoration)
     assetbonus.z = 3
     assetbonus.setPosition(80, 60)
+    assetokButton = sprites.create(assets.image`Ok button`, SpriteKind.decoration)
+    assetokButton.z = 4
+    assetokButton.setPosition(80, 91)
+    assetokButton = sprites.create(assets.image`Ok button`, SpriteKind.decoration)
 }
 function startIntro () {
     scene.setBackgroundColor(11)
@@ -318,6 +323,7 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let bossesDialog = 0
+let assetokButton: Sprite = null
 let assetbonus: Sprite = null
 let boss: Sprite = null
 let assettable: Sprite = null
@@ -436,9 +442,8 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 1 && speed == 0) {
+        if (info.score() == 5 && speed == 0) {
             speed_up()
-            takeABonus2()
         } else if (info.score() == 10 && speed == 1) {
             speed_up()
         } else if (info.score() == 15 && speed == 2) {
