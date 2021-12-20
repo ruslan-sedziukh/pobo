@@ -445,7 +445,7 @@ forever(function () {
 })
 forever(function () {
     while (gameOn) {
-        n = randint(1, 6)
+        n = randint(1, 7)
         if (n == 1) {
             value4 = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
         } else if (n == 2) {
@@ -456,8 +456,10 @@ forever(function () {
             value4 = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
         } else if (n == 5) {
             value4 = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
-        } else {
+        } else if (n == 6) {
             value4 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
+        } else {
+            value4 = sprites.create(assets.image`Netflix`, SpriteKind.Projectile)
         }
         console.log("-------------------------")
         console.log(".........................")
