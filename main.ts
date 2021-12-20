@@ -498,7 +498,7 @@ forever(function () {
         } else if (info.score() == 50 && speed == 5) {
             takeABonus2()
             speed += 1
-        } else if (info.score() == 1 && speed == 0) {
+        } else if (info.score() == 100 && speed == 6) {
             takeABonus3()
             speed += 1
         }
@@ -548,9 +548,9 @@ forever(function () {
         assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
         assetphone_call.z = 3
         assetphone_call.setPosition(80, 60)
-        story.spriteSayText(assetphone_call, "Не зупиняйся на досягнутому. ")
+        story.spriteSayText(assetphone_call, "Але!")
         story.spriteSayText(assetphone_call, "Ми ще не найкраща компанія у світі.")
-        story.spriteSayText(assetphone_call, "Отже у тебе ще купа роботи!")
+        story.spriteSayText(assetphone_call, "Тож у тебе ще купа роботи!")
         assetphone_call.destroy()
         gameOn = 1
         take_a_bonus_3_scene_2 = 0
