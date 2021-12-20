@@ -80,7 +80,7 @@ function startGame () {
     taskUpdate = randint(3000, 15000)
     gameOn = 1
     speed = 0
-    info.setLife(5)
+    info.setLife(999999)
     projectileSpeedStep = 25
     projectileUpdateStep = -150
     gameTime = 0
