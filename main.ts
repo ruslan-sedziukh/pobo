@@ -536,9 +536,7 @@ forever(function () {
         assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
         assetphone_call.z = 3
         assetphone_call.setPosition(80, 60)
-        story.spriteSayText(assetphone_call, "Так тримати!")
-        story.spriteSayText(assetphone_call, "Попереду ще багато роботи.")
-        story.spriteSayText(assetphone_call, "І головний бонус ;)")
+        story.spriteSayText(assetphone_call, "Продовжуй у тому ж дусі і на тебе чекає головний бонус!")
         assetphone_call.destroy()
         gameOn = 1
         take_a_bonus_2_scene_2 = 0
