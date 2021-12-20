@@ -110,10 +110,12 @@ function takeABonus2 () {
     assetbonus = sprites.create(assets.image`The Cup L1`, SpriteKind.decoration)
     assetbonus.z = 3
     assetbonus.setPosition(80, 60)
-    assetokButton = sprites.create(assets.image`Ok button`, SpriteKind.decoration)
+    assetokButton = sprites.create(assets.image`Ok button`, SpriteKind.Button)
     assetokButton.z = 4
     assetokButton.setPosition(80, 91)
-    assetokButton = sprites.create(assets.image`Ok button`, SpriteKind.decoration)
+    assetcoursor = sprites.create(assets.image`coursore2`, SpriteKind.Player)
+    assetcoursor.z = 5
+    controller.moveSprite(assetcoursor, 150, 150)
 }
 function startIntro () {
     scene.setBackgroundColor(11)
@@ -221,6 +223,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherS
         assetgameButton.destroy()
         assetintroButton.destroy()
         startIntro()
+    }
+    if (otherSprite == assetokButton && controller.A.isPressed()) {
+        assetcoursor.destroy()
+        assetbonus.destroy()
+        assetokButton.destroy()
+        gameOn = 1
+        letsMove()
     }
 })
 function sortList () {
