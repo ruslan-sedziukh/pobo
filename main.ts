@@ -463,7 +463,7 @@ forever(function () {
         } else if (info.score() == 25 && speed == 4) {
             speed_up()
             takeABonus1()
-        } else if (info.score() == 1 && speed == 0) {
+        } else if (info.score() == 50 && speed == 5) {
             takeABonus2()
             speed += 1
         } else if (info.score() == 100 && speed == 6) {
