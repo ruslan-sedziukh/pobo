@@ -1095,19 +1095,6 @@ f . . . . . f f
 11111111111111111111111111111111111111111111111111111111111111111111111111111111
 11111111111111111111111111111111111111111111111111111111111111111111111111111111
 `;
-            case "image38":
-            case "Netflix":return img`
-. f f f f f f f f f f . 
-f f f 2 f f f f 2 f f f 
-f f f 2 2 f f f 2 f f f 
-f f f 2 2 2 f f 2 f f f 
-f f f 2 f 2 f f 2 f f f 
-f f f 2 f f 2 f 2 f f f 
-f f f 2 f f 2 2 2 f f f 
-f f f 2 f f f 2 2 f f f 
-f f f 2 f f f f 2 f f f 
-. f f f f f f f f f f . 
-`;
         }
         return null;
     })
