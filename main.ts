@@ -86,6 +86,7 @@ function startGame () {
     gameTime = 0
     music.setVolume(20)
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
+    take_a_bonus_2_scene_2 = 0
     gameStart = 1
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.portal, function (sprite, otherSprite) {
@@ -102,7 +103,7 @@ function takeABonus2 () {
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Дзень-дзень")
-    story.spriteSayText(assetphone_call, "Ти робиш успіхи.  ")
+    story.spriteSayText(assetphone_call, "Ти робиш успіхи.")
     story.spriteSayText(assetphone_call, "Компанія не залишає таке без уваги і гідно винагорожує.")
     story.spriteSayText(assetphone_call, "Прийми це. Ти заслужив!")
     assetphone_call.destroy()
@@ -228,8 +229,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherS
         assetbonus.destroy()
         assetokButton.destroy()
         effects.confetti.endScreenEffect()
-        gameOn = 1
-        letsMove()
+        take_a_bonus_2_scene_2 = 1
     }
 })
 function sortList () {
@@ -338,6 +338,7 @@ let boss: Sprite = null
 let assettable: Sprite = null
 let assetportal: Sprite = null
 let gameStart = 0
+let take_a_bonus_2_scene_2 = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
 let projectileUpdateStep = 0
@@ -495,6 +496,20 @@ forever(function () {
             taskUpdate = randint(3000, 10000)
             pause(taskUpdate)
         }
+    }
+})
+forever(function () {
+    if (take_a_bonus_2_scene_2) {
+        assetphone_call = sprites.create(assets.image`Phonecall`, SpriteKind.decoration)
+        assetphone_call.z = 3
+        assetphone_call.setPosition(80, 60)
+        story.spriteSayText(assetphone_call, "Так тримати!")
+        story.spriteSayText(assetphone_call, "Попереду ще багато роботи.")
+        story.spriteSayText(assetphone_call, "І не менш чарівні бонуси!")
+        assetphone_call.destroy()
+        gameOn = 1
+        take_a_bonus_2_scene_2 = 0
+        letsMove()
     }
 })
 forever(function () {
