@@ -102,10 +102,9 @@ function takeABonus2 () {
     assetphone_call.z = 3
     assetphone_call.setPosition(80, 60)
     story.spriteSayText(assetphone_call, "Дзень-дзень")
-    story.spriteSayText(assetphone_call, "Ти робиш успіхи. Ми бачимо прогрес. ")
-    story.spriteSayText(assetphone_call, "Компанія оцінила твої старання.")
-    story.spriteSayText(assetphone_call, "Ти заслужив бонус! ")
-    story.spriteSayText(assetphone_call, "І твій бонус, це...")
+    story.spriteSayText(assetphone_call, "Ти робиш успіхи.  ")
+    story.spriteSayText(assetphone_call, "Компанія не залишає таке без уваги і гідно винагорожує.")
+    story.spriteSayText(assetphone_call, "Прийми це. Ти заслужив!")
     assetphone_call.destroy()
     effects.confetti.startScreenEffect()
     assetbonus = sprites.create(assets.image`The Cup L1`, SpriteKind.decoration)
@@ -463,7 +462,7 @@ forever(function () {
         } else if (info.score() == 25 && speed == 4) {
             speed_up()
             takeABonus1()
-        } else if (info.score() == 50 && speed == 5) {
+        } else if (info.score() == 1 && speed == 0) {
             takeABonus2()
             speed += 1
         } else if (info.score() == 100 && speed == 6) {
