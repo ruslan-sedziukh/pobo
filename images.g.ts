@@ -1099,14 +1099,14 @@ f f f 2 f f f f 2 f f f
 `;
             case "image25":
             case "coursore2":return img`
-f f f f f f f f 
+f f f f f f f . 
 f 3 3 3 3 3 f . 
 f 3 3 3 3 f . . 
 f 3 3 3 f . . . 
 f 3 3 f 3 f . . 
 f 3 f . f 3 f . 
 f f . . . f 3 f 
-f . . . . . f f 
+. . . . . . f f 
 `;
         }
         return null;
