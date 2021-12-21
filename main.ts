@@ -55,11 +55,11 @@ function stopMove () {
     for (let value of sprites.allOfKind(SpriteKind.Task)) {
         value.setVelocity(0, 0)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
-        value.setVelocity(0, 0)
+    for (let value2 of sprites.allOfKind(SpriteKind.Projectile)) {
+        value2.setVelocity(0, 0)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Food)) {
-        value.setVelocity(0, 0)
+    for (let value3 of sprites.allOfKind(SpriteKind.Food)) {
+        value3.setVelocity(0, 0)
     }
 }
 function startGame () {
@@ -162,14 +162,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     }
 })
 function updateSpeed () {
-    for (let value of sprites.allOfKind(SpriteKind.Task)) {
-        value.setVelocity(0, projectileSpeed)
+    for (let value4 of sprites.allOfKind(SpriteKind.Task)) {
+        value4.setVelocity(0, projectileSpeed)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
-        value.setVelocity(0, projectileSpeed)
+    for (let value5 of sprites.allOfKind(SpriteKind.Projectile)) {
+        value5.setVelocity(0, projectileSpeed)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Food)) {
-        value.setVelocity(0, projectileSpeed)
+    for (let value6 of sprites.allOfKind(SpriteKind.Food)) {
+        value6.setVelocity(0, projectileSpeed)
     }
 }
 function takeABonus3 () {
@@ -215,14 +215,14 @@ function picPosition () {
 }
 function letsMove () {
     controller.moveSprite(Hops_and_Paw, 200, 200)
-    for (let value of sprites.allOfKind(SpriteKind.Task)) {
-        value.setVelocity(0, projectileSpeed)
+    for (let value7 of sprites.allOfKind(SpriteKind.Task)) {
+        value7.setVelocity(0, projectileSpeed)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Projectile)) {
-        value.setVelocity(0, projectileSpeed)
+    for (let value8 of sprites.allOfKind(SpriteKind.Projectile)) {
+        value8.setVelocity(0, projectileSpeed)
     }
-    for (let value of sprites.allOfKind(SpriteKind.Food)) {
-        value.setVelocity(0, projectileSpeed)
+    for (let value9 of sprites.allOfKind(SpriteKind.Food)) {
+        value9.setVelocity(0, projectileSpeed)
     }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -350,7 +350,7 @@ function getList () {
         }
     }
 }
-let value4: Sprite = null
+let value42: Sprite = null
 let n = 0
 let i = 0
 let bigOne = 0
@@ -397,23 +397,42 @@ game.onUpdate(function () {
     }
 })
 forever(function () {
+    if (gameIntro) {
+        if (boss.x - Hops_and_Paw.x <= 35 && bossesDialog) {
+            controller.moveSprite(Hops_and_Paw, 0, 0)
+            story.spriteSayText(Hops_and_Paw, "Йо, бос.")
+            story.spriteSayText(boss, "Йо, заходь.")
+            story.spriteSayText(boss, "Керівництво постановило стратегічну ціль компанії.")
+            story.spriteSayText(boss, "Твоє завдання - досягнути цієї цілі!")
+            story.spriteSayText(Hops_and_Paw, "Якої цілі?")
+            story.spriteSayText(boss, "Щоб ми стали найкращою компанією у світі! ")
+            story.spriteSayText(Hops_and_Paw, "Так, бос!")
+            story.spriteSayText(boss, "Компанія на тебе покладається.")
+            boss.setImage(assets.image`Intro Boss 2`)
+            story.spriteSayText(boss, "Вперед. І не відволікайся на всяку фігню!")
+            controller.moveSprite(Hops_and_Paw, 100, 0)
+            bossesDialog = 0
+        }
+    }
+})
+forever(function () {
     while (gameOn) {
         if (gameTime < 5000) {
             pause(donutsUpdate)
         } else {
             n = randint(1, 6)
             if (n == 1) {
-                value4 = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
+                value42 = sprites.create(assets.image`Donut 1`, SpriteKind.Food)
             } else if (n == 2) {
-                value4 = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
+                value42 = sprites.create(assets.image`Donut 3`, SpriteKind.Food)
             } else if (n == 3) {
-                value4 = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
+                value42 = sprites.create(assets.image`Donut 2`, SpriteKind.Food)
             } else if (n == 4) {
-                value4 = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
+                value42 = sprites.create(assets.image`Donut 4`, SpriteKind.Food)
             } else if (n == 5) {
-                value4 = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
+                value42 = sprites.create(assets.image`Donut 5`, SpriteKind.Food)
             } else {
-                value4 = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
+                value42 = sprites.create(assets.image`Donut 6`, SpriteKind.Food)
             }
             console.log("-------------------------")
             console.log(".........................")
@@ -422,13 +441,13 @@ forever(function () {
             console.log("-- outside picPosition --")
             console.log("position")
             console.log(position)
-            value4.setPosition(position, 0)
-            value4.setVelocity(0, projectileSpeed)
-            value4.z = 2
-            value4.setFlag(SpriteFlag.AutoDestroy, true)
+            value42.setPosition(position, 0)
+            value42.setVelocity(0, projectileSpeed)
+            value42.z = 2
+            value42.setFlag(SpriteFlag.AutoDestroy, true)
             objectGeneratingIndex[1][0] = position
             console.log("sprite x")
-            console.log(value4.x)
+            console.log(value42.x)
             console.log("position")
             console.log(position)
             objectGeneratingIndex[1][1] = game.runtime()
@@ -441,19 +460,19 @@ forever(function () {
     while (gameOn) {
         n = randint(1, 7)
         if (n == 1) {
-            value4 = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`Instagram`, SpriteKind.Projectile)
         } else if (n == 2) {
-            value4 = sprites.create(assets.image`YouTube`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`YouTube`, SpriteKind.Projectile)
         } else if (n == 3) {
-            value4 = sprites.create(assets.image`Twitter`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`Twitter`, SpriteKind.Projectile)
         } else if (n == 4) {
-            value4 = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`TikTok`, SpriteKind.Projectile)
         } else if (n == 5) {
-            value4 = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`PornHub`, SpriteKind.Projectile)
         } else if (n == 6) {
-            value4 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`Facebook`, SpriteKind.Projectile)
         } else {
-            value4 = sprites.create(assets.image`myImage1`, SpriteKind.Projectile)
+            value42 = sprites.create(assets.image`myImage1`, SpriteKind.Projectile)
         }
         console.log("-------------------------")
         console.log(".........................")
@@ -462,13 +481,13 @@ forever(function () {
         console.log("-- outside picPosition --")
         console.log("position")
         console.log(position)
-        value4.setPosition(position, 0)
-        value4.setVelocity(0, projectileSpeed)
-        value4.z = 2
-        value4.setFlag(SpriteFlag.AutoDestroy, true)
+        value42.setPosition(position, 0)
+        value42.setVelocity(0, projectileSpeed)
+        value42.z = 2
+        value42.setFlag(SpriteFlag.AutoDestroy, true)
         objectGeneratingIndex[0][0] = position
         console.log("sprite x")
-        console.log(value4.x)
+        console.log(value42.x)
         console.log("position")
         console.log(position)
         objectGeneratingIndex[0][1] = game.runtime()
@@ -480,21 +499,21 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 5 && speed == 0) {
+        if (info.score() == 1 && speed == 0) {
             speed_up()
-        } else if (info.score() == 10 && speed == 1) {
+        } else if (info.score() == 2 && speed == 1) {
             speed_up()
-        } else if (info.score() == 15 && speed == 2) {
+        } else if (info.score() == 3 && speed == 2) {
             speed_up()
-        } else if (info.score() == 20 && speed == 3) {
+        } else if (info.score() == 4 && speed == 3) {
             speed_up()
-        } else if (info.score() == 25 && speed == 4) {
+        } else if (info.score() == 5 && speed == 4) {
             speed_up()
             takeABonus1()
-        } else if (info.score() == 50 && speed == 5) {
+        } else if (info.score() == 6 && speed == 5) {
             takeABonus2()
             speed += 1
-        } else if (info.score() == 100 && speed == 6) {
+        } else if (info.score() == 7 && speed == 6) {
             takeABonus3()
             speed += 1
         }
@@ -505,7 +524,7 @@ forever(function () {
         if (gameTime < 5000) {
             pause(taskUpdate)
         } else {
-            value4 = sprites.create(assets.image`Task`, SpriteKind.Task)
+            value42 = sprites.create(assets.image`Task`, SpriteKind.Task)
             console.log("-------------------------")
             console.log(".........................")
             console.log("*** Donut ***")
@@ -513,12 +532,12 @@ forever(function () {
             console.log("-- outside picPosition --")
             console.log("position")
             console.log(position)
-            value4.setPosition(position, 0)
-            value4.setVelocity(0, projectileSpeed)
-            value4.setFlag(SpriteFlag.AutoDestroy, true)
+            value42.setPosition(position, 0)
+            value42.setVelocity(0, projectileSpeed)
+            value42.setFlag(SpriteFlag.AutoDestroy, true)
             objectGeneratingIndex[2][0] = position
             console.log("sprite x")
-            console.log(value4.x)
+            console.log(value42.x)
             console.log("position")
             console.log(position)
             objectGeneratingIndex[2][1] = game.runtime()
@@ -549,25 +568,6 @@ forever(function () {
         gameOn = 1
         take_a_bonus_3_scene_2 = 0
         letsMove()
-    }
-})
-forever(function () {
-    if (gameIntro) {
-        if (boss.x - Hops_and_Paw.x <= 35 && bossesDialog) {
-            controller.moveSprite(Hops_and_Paw, 0, 0)
-            story.spriteSayText(Hops_and_Paw, "Йо, бос.")
-            story.spriteSayText(boss, "Йо, заходь.")
-            story.spriteSayText(boss, "Керівництво постановило стратегічну ціль компанії.")
-            story.spriteSayText(boss, "Твоє завдання - досягнути цієї цілі!")
-            story.spriteSayText(Hops_and_Paw, "Якої цілі?")
-            story.spriteSayText(boss, "Щоб ми стали найкращою компанією у світі! ")
-            story.spriteSayText(Hops_and_Paw, "Так, бос!")
-            story.spriteSayText(boss, "Компанія на тебе покладається.")
-            boss.setImage(assets.image`Intro Boss 2`)
-            story.spriteSayText(boss, "Вперед. І не відволікайся на всяку фігню!")
-            controller.moveSprite(Hops_and_Paw, 100, 0)
-            bossesDialog = 0
-        }
     }
 })
 game.onUpdateInterval(500, function () {
