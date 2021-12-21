@@ -132,7 +132,7 @@ function startIntro () {
     assettable.setPosition(240, 164)
     assettable.z = 2
     assetportal = sprites.create(assets.image`Level portal`, SpriteKind.portal)
-    assetportal.setPosition(350, 152)
+    assetportal.setPosition(400, 152)
     assetportal.ay = 200
     assettable.z = 0
     tiles.setTilemap(tilemap`level5`)
@@ -499,18 +499,30 @@ forever(function () {
 })
 forever(function () {
     if (gameIntro) {
-        if (Hops_and_Paw.x >= 50 && beeDialog) {
+        if (Hops_and_Paw.x - boss.x >= 100 && beeDialog) {
             controller.moveSprite(Hops_and_Paw, 0, 0)
             story.spriteSayText(Hops_and_Paw, "Я в дупі...")
             assetbee = sprites.create(assets.image`Bee`, SpriteKind.decoration)
-            assetbee.setPosition(Hops_and_Paw.x + 60, Hops_and_Paw.y - 20)
+            assetbee.setPosition(Hops_and_Paw.x + 45, Hops_and_Paw.y - 10)
+            assetbee.startEffect(effects.confetti)
             animation.runImageAnimation(
             assetbee,
             assets.animation`Bee Animation 2`,
             200,
             true
             )
-            story.spriteSayText(assetbee, "Не падай духом! ")
+            story.spriteSayText(assetbee, "Кукарілеко перфавор!")
+            story.spriteSayText(assetbee, "Схоже, що тобі не завадить допомога. ")
+            story.spriteSayText(Hops_and_Paw, "Мені дали дуже складний і важливий проект. ")
+            story.spriteSayText(Hops_and_Paw, "І я боюсь, що не впораюсь. ")
+            story.spriteSayText(assetbee, "Є дещо, що допоможе тобі впоратися із таким проектом.")
+            story.spriteSayText(Hops_and_Paw, "Що ж це?")
+            story.spriteSayText(assetbee, "Пончики!")
+            story.spriteSayText(Hops_and_Paw, "Точно!")
+            story.spriteSayText(assetbee, "Не падай духом.")
+            story.spriteSayText(assetbee, "Їж пончики і усе в тебе вийде.")
+            story.spriteSayText(assetbee, "Ларара тата тута!")
+            assetbee.destroy(effects.confetti, 1000)
             controller.moveSprite(Hops_and_Paw, 100, 0)
             beeDialog = 0
         }
