@@ -158,8 +158,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
         gameOn = 0
         Hops_and_Paw.destroy(effects.fire, 500)
         effects.starField.endScreenEffect()
-        music.playMelody("C D E F G A B C5 ", 120)
-        game.over(false, effects.confetti)
+        game.over(false, effects.dissolve)
     }
 })
 function updateSpeed () {
