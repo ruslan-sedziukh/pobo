@@ -515,12 +515,12 @@ forever(function () {
             story.spriteSayText(assetbee, "Схоже, що тобі не завадить допомога. ")
             story.spriteSayText(Hops_and_Paw, "Мені дали дуже складний і важливий проект. ")
             story.spriteSayText(Hops_and_Paw, "І я боюсь, що не впораюсь. ")
-            story.spriteSayText(assetbee, "Є дещо, що допоможе тобі впоратися із таким проектом.")
+            story.spriteSayText(assetbee, "Є дещо, що допоможе тобі впоратися із цим проектом.")
             story.spriteSayText(Hops_and_Paw, "Що ж це?")
             story.spriteSayText(assetbee, "Пончики!")
             story.spriteSayText(Hops_and_Paw, "Точно!")
             story.spriteSayText(assetbee, "Не падай духом.")
-            story.spriteSayText(assetbee, "Їж пончики і усе в тебе вийде.")
+            story.spriteSayText(assetbee, "Їж пончики, закривай таски і усе в тебе вийде.")
             story.spriteSayText(assetbee, "Ларара тата тута!")
             assetbee.destroy(effects.confetti, 1000)
             controller.moveSprite(Hops_and_Paw, 100, 0)
@@ -533,21 +533,21 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 1 && speed == 0) {
+        if (info.score() == 5 && speed == 0) {
             speed_up()
-        } else if (info.score() == 2 && speed == 1) {
+        } else if (info.score() == 10 && speed == 1) {
             speed_up()
-        } else if (info.score() == 3 && speed == 2) {
+        } else if (info.score() == 15 && speed == 2) {
             speed_up()
-        } else if (info.score() == 4 && speed == 3) {
+        } else if (info.score() == 20 && speed == 3) {
             speed_up()
-        } else if (info.score() == 5 && speed == 4) {
+        } else if (info.score() == 25 && speed == 4) {
             speed_up()
             takeABonus1()
-        } else if (info.score() == 6 && speed == 5) {
+        } else if (info.score() == 50 && speed == 5) {
             takeABonus2()
             speed += 1
-        } else if (info.score() == 7 && speed == 6) {
+        } else if (info.score() == 100 && speed == 6) {
             takeABonus3()
             speed += 1
         }
