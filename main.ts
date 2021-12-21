@@ -138,6 +138,7 @@ function startIntro () {
     tiles.setTilemap(tilemap`level5`)
     gameIntro = 1
     bossesDialog = 1
+    beeDialog = 1
 }
 function speed_up () {
     projectileSpeed += projectileSpeedStep
@@ -350,6 +351,7 @@ function getList () {
         }
     }
 }
+let assetbee: Sprite = null
 let value42: Sprite = null
 let n = 0
 let i = 0
@@ -358,6 +360,7 @@ let smallOne = 0
 let position = 0
 let timeToMove = 0
 let assetokButton2: Sprite = null
+let beeDialog = 0
 let bossesDialog = 0
 let assetokButton: Sprite = null
 let assetbonus: Sprite = null
@@ -492,6 +495,25 @@ forever(function () {
         console.log(position)
         objectGeneratingIndex[0][1] = game.runtime()
         pause(projectileUpdate)
+    }
+})
+forever(function () {
+    if (gameIntro) {
+        if (Hops_and_Paw.x >= 50 && beeDialog) {
+            controller.moveSprite(Hops_and_Paw, 0, 0)
+            story.spriteSayText(Hops_and_Paw, "Я в дупі...")
+            assetbee = sprites.create(assets.image`Bee`, SpriteKind.decoration)
+            assetbee.setPosition(Hops_and_Paw.x + 60, Hops_and_Paw.y - 20)
+            animation.runImageAnimation(
+            assetbee,
+            assets.animation`Bee Animation 2`,
+            200,
+            true
+            )
+            story.spriteSayText(assetbee, "Не падай духом! ")
+            controller.moveSprite(Hops_and_Paw, 100, 0)
+            beeDialog = 0
+        }
     }
 })
 forever(function () {
