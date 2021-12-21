@@ -72,17 +72,14 @@ function startGame () {
     controller.moveSprite(Hops_and_Paw, 200, 200)
     Hops_and_Paw.setFlag(SpriteFlag.StayInScreen, true)
     scene.centerCameraAt(80, 60)
-    ammoLeft = 0
-    speed = 1
     projectileUpdate = 1000
     projectileSpeed = 50
     donutsUpdate = randint(3000, 15000)
     taskUpdate = randint(3000, 15000)
     gameOn = 1
     speed = 0
-    info.setLife(20)
+    info.setLife(5)
     projectileSpeedStep = 20
-    projectileUpdateStep = -150
     gameTime = 0
     music.setVolume(20)
     objectGeneratingIndex = [[0, 0], [0, 0], [0, 0]]
@@ -373,14 +370,12 @@ let take_a_bonus_3_scene_2 = 0
 let take_a_bonus_2_scene_2 = 0
 let objectGeneratingIndex: number[][] = []
 let gameTime = 0
-let projectileUpdateStep = 0
 let projectileSpeedStep = 0
+let speed = 0
 let taskUpdate = 0
 let donutsUpdate = 0
 let projectileSpeed = 0
 let projectileUpdate = 0
-let speed = 0
-let ammoLeft = 0
 let gameIntro = 0
 let Hops_and_Paw: Sprite = null
 let assetintroButton: Sprite = null
@@ -486,21 +481,21 @@ forever(function () {
         if (info.life() == 0) {
             gameOn = 0
         }
-        if (info.score() == 1 && speed == 0) {
+        if (info.score() == 5 && speed == 0) {
             speed_up()
-        } else if (info.score() == 2 && speed == 1) {
+        } else if (info.score() == 10 && speed == 1) {
             speed_up()
-        } else if (info.score() == 3 && speed == 2) {
+        } else if (info.score() == 15 && speed == 2) {
             speed_up()
-        } else if (info.score() == 4 && speed == 3) {
+        } else if (info.score() == 20 && speed == 3) {
             speed_up()
-        } else if (info.score() == 5 && speed == 4) {
+        } else if (info.score() == 25 && speed == 4) {
             speed_up()
             takeABonus1()
-        } else if (info.score() == 6 && speed == 5) {
+        } else if (info.score() == 50 && speed == 5) {
             takeABonus2()
             speed += 1
-        } else if (info.score() == 7 && speed == 6) {
+        } else if (info.score() == 100 && speed == 6) {
             takeABonus3()
             speed += 1
         }

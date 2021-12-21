@@ -918,17 +918,6 @@ ffaaaaaaa35555553aaaaaaaa35555553aaaaaaaff
 11111111111111111111111111111111111111111111111111111111111111111111111111111111
 11111111111111111111111111111111111111111111111111111111111111111111111111111111
 `;
-            case "image25":
-            case "coursore2":return img`
-f f f f f f f f 
-f f f f f f f . 
-f f f f f f . . 
-f f f f f . . . 
-f f f f f f . . 
-f f f . f f f . 
-f f . . . f f f 
-f . . . . . f f 
-`;
             case "image35":
             case "The Cup L1":return img`
 11111111111111111111111111111111111111111111111111111111111111111111111111111111
@@ -1107,6 +1096,17 @@ f f f 2 f f 2 2 2 f f f
 f f f 2 f f f 2 2 f f f 
 f f f 2 f f f f 2 f f f 
 . f f f f f f f f f f . 
+`;
+            case "image25":
+            case "coursore2":return img`
+f f f f f f f f 
+f 3 3 3 3 3 f . 
+f 3 3 3 3 f . . 
+f 3 3 3 f . . . 
+f 3 3 f 3 f . . 
+f 3 f . f 3 f . 
+f f . . . f 3 f 
+f . . . . . f f 
 `;
         }
         return null;
